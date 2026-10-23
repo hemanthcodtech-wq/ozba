@@ -16,6 +16,8 @@ import {
   ChevronRight,
   ExternalLink
 } from 'lucide-react';
+import TextReveal from '../components/TextReveal';
+import TiltCard from '../components/TiltCard';
 import '../styles/ManpowerDetail.css';
 
 export default function ManpowerDetail({ lang, onOpenQuote }) {
@@ -116,21 +118,23 @@ export default function ManpowerDetail({ lang, onOpenQuote }) {
 
             {/* Right Column: Crystal Clear High-Definition Image Card */}
             <div className="detail-hero-showcase-media">
-              <div className="detail-hero-media-card">
-                <img 
-                  src={category.image} 
-                  alt={category.title} 
-                  className="detail-hero-media-img" 
-                />
-                <div className="detail-hero-media-glow"></div>
-                <div className="detail-media-caption">
-                  <span className="media-caption-badge">
-                    <CheckCircle2 size={14} />
-                    {lang === 'en' ? 'Active Field Category' : 'تخصص ميداني نشط'}
-                  </span>
-                  <span className="media-caption-title">{category.title}</span>
+              <TiltCard>
+                <div className="detail-hero-media-card">
+                  <img 
+                    src={category.image} 
+                    alt={category.title} 
+                    className="detail-hero-media-img" 
+                  />
+                  <div className="detail-hero-media-glow"></div>
+                  <div className="detail-media-caption">
+                    <span className="media-caption-badge">
+                      <CheckCircle2 size={14} />
+                      {lang === 'en' ? 'Active Field Category' : 'تخصص ميداني نشط'}
+                    </span>
+                    <span className="media-caption-title">{category.title}</span>
+                  </div>
                 </div>
-              </div>
+              </TiltCard>
             </div>
           </div>
         </div>
@@ -199,87 +203,89 @@ export default function ManpowerDetail({ lang, onOpenQuote }) {
 
             {/* Right Column: Selected Trade Deep-Dive Inspector */}
             <div className="trade-inspector-column">
-              <div className="trade-inspector-card">
-                <div className="inspector-media-wrap">
-                  <img 
-                    src={activeRole.image || category.image} 
-                    alt={activeRole.name} 
-                    className="inspector-media-img" 
-                  />
-                  <div className="inspector-media-gradient"></div>
-                  <div className="inspector-badge-row">
-                    <span className="inspector-status-badge">
-                      <CheckCircle2 size={14} />
-                      {lang === 'en' ? 'Available for Monthly & Annual Hire' : 'متاح للإيجار الشهري والسنوي'}
-                    </span>
-                    <span className="inspector-lead-badge">
-                      <Clock size={14} />
-                      {category.leadTime}
-                    </span>
-                  </div>
-                  <div className="inspector-title-overlay">
-                    <div className="inspector-trade-name">{activeRole.name}</div>
-                    <div className="inspector-trade-ar">{activeRole.nameAr}</div>
-                  </div>
-                </div>
-
-                <div className="inspector-body">
-                  <div className="spec-feature-box">
-                    <h4 className="spec-title">
-                      <Award size={17} className="spec-icon" />
-                      {lang === 'en' ? 'Core Role Responsibilities' : 'المسؤوليات والمهام الأساسية'}
-                    </h4>
-                    <p className="spec-desc">{activeRole.responsibilities}</p>
-                  </div>
-
-                  <div className="spec-meta-grid">
-                    <div className="spec-meta-cell">
-                      <div className="spec-meta-label">{lang === 'en' ? 'Experience Level' : 'الخبرة الميدانية'}</div>
-                      <div className="spec-meta-value">{activeRole.experience}</div>
+              <TiltCard maxTilt={5}>
+                <div className="trade-inspector-card">
+                  <div className="inspector-media-wrap">
+                    <img 
+                      src={activeRole.image || category.image} 
+                      alt={activeRole.name} 
+                      className="inspector-media-img" 
+                    />
+                    <div className="inspector-media-gradient"></div>
+                    <div className="inspector-badge-row">
+                      <span className="inspector-status-badge">
+                        <CheckCircle2 size={14} />
+                        {lang === 'en' ? 'Available for Monthly & Annual Hire' : 'متاح للإيجار الشهري والسنوي'}
+                      </span>
+                      <span className="inspector-lead-badge">
+                        <Clock size={14} />
+                        {category.leadTime}
+                      </span>
                     </div>
-                    <div className="spec-meta-cell">
-                      <div className="spec-meta-label">{lang === 'en' ? 'Compliance Badges' : 'الشهادات والاعتمادات'}</div>
-                      <div className="spec-meta-badges">
-                        <span className="tag-tuv">TUV Verified</span>
-                        <span className="tag-aramco">Saudi Aramco Standards</span>
+                    <div className="inspector-title-overlay">
+                      <div className="inspector-trade-name">{activeRole.name}</div>
+                      <div className="inspector-trade-ar">{activeRole.nameAr}</div>
+                    </div>
+                  </div>
+
+                  <div className="inspector-body">
+                    <div className="spec-feature-box">
+                      <h4 className="spec-title">
+                        <Award size={17} className="spec-icon" />
+                        {lang === 'en' ? 'Core Role Responsibilities' : 'المسؤوليات والمهام الأساسية'}
+                      </h4>
+                      <p className="spec-desc">{activeRole.responsibilities}</p>
+                    </div>
+
+                    <div className="spec-meta-grid">
+                      <div className="spec-meta-cell">
+                        <div className="spec-meta-label">{lang === 'en' ? 'Experience Level' : 'الخبرة الميدانية'}</div>
+                        <div className="spec-meta-value">{activeRole.experience}</div>
+                      </div>
+                      <div className="spec-meta-cell">
+                        <div className="spec-meta-label">{lang === 'en' ? 'Compliance Badges' : 'الشهادات والاعتمادات'}</div>
+                        <div className="spec-meta-badges">
+                          <span className="tag-tuv">TUV Verified</span>
+                          <span className="tag-aramco">Saudi Aramco Standards</span>
+                        </div>
+                      </div>
+                      <div className="spec-meta-cell">
+                        <div className="spec-meta-label">{lang === 'en' ? 'Deployment Region' : 'نطاق التغطية'}</div>
+                        <div className="spec-meta-value">{lang === 'en' ? 'Kingdom-wide (Jubail, Dammam, Riyadh, Yanbu)' : 'جميع مناطق المملكة'}</div>
+                      </div>
+                      <div className="spec-meta-cell">
+                        <div className="spec-meta-label">{lang === 'en' ? 'Contract Models' : 'عقود التوريد'}</div>
+                        <div className="spec-meta-value">{lang === 'en' ? 'Monthly, Yearly & Shutdown (TAR)' : 'عقود تشغيل شهرية، سنوية، وصيانة دورية'}</div>
                       </div>
                     </div>
-                    <div className="spec-meta-cell">
-                      <div className="spec-meta-label">{lang === 'en' ? 'Deployment Region' : 'نطاق التغطية'}</div>
-                      <div className="spec-meta-value">{lang === 'en' ? 'Kingdom-wide (Jubail, Dammam, Riyadh, Yanbu)' : 'جميع مناطق المملكة'}</div>
-                    </div>
-                    <div className="spec-meta-cell">
-                      <div className="spec-meta-label">{lang === 'en' ? 'Contract Models' : 'عقود التوريد'}</div>
-                      <div className="spec-meta-value">{lang === 'en' ? 'Monthly, Yearly & Shutdown (TAR)' : 'عقود تشغيل شهرية، سنوية، وصيانة دورية'}</div>
-                    </div>
-                  </div>
 
-                  {/* Immediate Hire Actions */}
-                  <div className="inspector-actions">
-                    <button className="btn-inspector-quote" onClick={onOpenQuote}>
-                      <FileText size={16} />
-                      <span>{lang === 'en' ? `Inquire for ${activeRole.name}` : `طلب تسعيرة لـ ${activeRole.name}`}</span>
-                      <ArrowRight size={16} />
-                    </button>
+                    {/* Immediate Hire Actions */}
+                    <div className="inspector-actions">
+                      <button className="btn-inspector-quote" onClick={onOpenQuote}>
+                        <FileText size={16} />
+                        <span>{lang === 'en' ? `Inquire for ${activeRole.name}` : `طلب تسعيرة لـ ${activeRole.name}`}</span>
+                        <ArrowRight size={16} />
+                      </button>
 
-                    <div className="inspector-quick-contacts">
-                      <a 
-                        href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Hello ORJWAN, I need CVs and rates for: ${activeRole.name} (Category ${category.code}).`)}`}
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="btn-inspector-wa"
-                      >
-                        <MessageCircle size={16} />
-                        <span>{lang === 'en' ? 'WhatsApp Inquire' : 'واتساب'}</span>
-                      </a>
-                      <a href={`tel:${phoneNumber}`} className="btn-inspector-tel">
-                        <Phone size={16} />
-                        <span>{lang === 'en' ? 'Direct Call' : 'اتصال'}</span>
-                      </a>
+                      <div className="inspector-quick-contacts">
+                        <a 
+                          href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Hello ORJWAN, I need CVs and rates for: ${activeRole.name} (Category ${category.code}).`)}`}
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="btn-inspector-wa"
+                        >
+                          <MessageCircle size={16} />
+                          <span>{lang === 'en' ? 'WhatsApp Inquire' : 'واتساب'}</span>
+                        </a>
+                        <a href={`tel:${phoneNumber}`} className="btn-inspector-tel">
+                          <Phone size={16} />
+                          <span>{lang === 'en' ? 'Direct Call' : 'اتصال'}</span>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </TiltCard>
             </div>
           </div>
 

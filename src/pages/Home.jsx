@@ -24,11 +24,19 @@ import {
   Copy,
   Check,
   MessageCircle,
-  FileSpreadsheet
+  FileSpreadsheet,
+  TrendingUp,
+  CheckCircle
 } from 'lucide-react';
+import { motion } from 'motion/react';
 import { manpowerCategories } from '../data/manpowerData';
 import FleetEstimator from '../components/FleetEstimator';
 import ComplianceCertDrawer from '../components/ComplianceCertDrawer';
+import TypewriterText from '../components/TypewriterText';
+import TextReveal from '../components/TextReveal';
+import ScrollReveal from '../components/ScrollReveal';
+import AnimatedCounter from '../components/AnimatedCounter';
+import TiltCard from '../components/TiltCard';
 import '../styles/Home.css';
 
 export default function Home({ lang, onOpenQuote, showToast }) {
@@ -124,26 +132,86 @@ export default function Home({ lang, onOpenQuote, showToast }) {
 
         <div className="hero-gradient-overlay"></div>
 
+        {/* Dedicated Mobile Image Showcase Card: clearly visible photo at top of mobile banner */}
+        <div className="hero-mobile-image-showcase">
+          <div className="hero-mobile-image-frame">
+            <img 
+              src={heroSlides[currentSlide].image} 
+              alt={heroSlides[currentSlide].alt}
+              className="hero-mobile-img" 
+            />
+            <div className="hero-mobile-img-badge">
+              <span className="hero-mobile-badge-dot"></span>
+              <span>{lang === 'en' ? 'Active Projects • KSA' : 'مشاريع نشطة • المملكة'}</span>
+            </div>
+            <div className="hero-mobile-img-controls">
+              <button onClick={prevSlide} aria-label="Previous Photo" className="hero-mob-ctrl-btn">
+                <ArrowLeft size={14} />
+              </button>
+              <span className="hero-mob-slide-idx">0{currentSlide + 1} / 0{heroSlides.length}</span>
+              <button onClick={nextSlide} aria-label="Next Photo" className="hero-mob-ctrl-btn">
+                <ArrowRight size={14} />
+              </button>
+            </div>
+          </div>
+        </div>
+
         <div className="container-hero" style={{ position: 'relative' }}>
           <div className="hero-content">
-            {/* Header / Sub-title exactly as in reference image */}
-            <div className="hero-legal-title-en">
-              ORJWAN ZAKI BIN AHMED AL-RABH <br />
-              GENERAL CONTRACTING EST.
-            </div>
+            {/* Header / Sub-title exactly as in reference image with unreveal mask */}
+            <TextReveal delay={0.1} duration={0.65}>
+              <div className="hero-legal-title-en">
+                ORJWAN ZAKI BIN AHMED AL-RABH <br />
+                GENERAL CONTRACTING EST.
+              </div>
+            </TextReveal>
 
-            <div className="hero-legal-title-ar">
-              مؤسسة ارجوان زكي بن أحمد آل ربح للمقاولات العامة
-            </div>
+            <TextReveal delay={0.2} duration={0.65}>
+              <div className="hero-legal-title-ar">
+                مؤسسة ارجوان زكي بن أحمد آل ربح للمقاولات العامة
+              </div>
+            </TextReveal>
 
-            <div className="hero-cr-line">
-              CR NO : <strong>2053123342</strong> | رقم السجل التجاري: <strong>٢٠٥٣١٢٣٣٤٢</strong>
-            </div>
+            <TextReveal delay={0.3} duration={0.6}>
+              <div className="hero-cr-line">
+                CR NO : <strong>2053123342</strong> | رقم السجل التجاري: <strong>٢٠٥٣١٢٣٣٤٢</strong>
+              </div>
+            </TextReveal>
 
-            {/* Main Catchphrase */}
+            {/* Main Catchphrase with unreveal + dynamic Typewriter */}
             <h1 className="hero-main-claim">
-              TRUST, RELIABILITY & <br />
-              <span className="claim-gold">COMMITTED TO QUALITY</span>
+              <TextReveal delay={0.35} duration={0.75}>
+                TRUST, RELIABILITY & <br />
+              </TextReveal>
+              <span className="claim-gold">
+                {lang === 'en' ? (
+                  <TypewriterText 
+                    words={[
+                      'COMMITTED TO QUALITY',
+                      'CERTIFIED MANPOWER',
+                      'HEAVY EQUIPMENT FLEET',
+                      'SAFETY & COMPLIANCE FIRST'
+                    ]}
+                    typingSpeed={80}
+                    deletingSpeed={45}
+                    pauseTime={2400}
+                    cursorColor="#E4C77E"
+                  />
+                ) : (
+                  <TypewriterText 
+                    words={[
+                      'ملتزمون بأعلى معايير الجودة',
+                      'توريد كوادر فنية معتمدة',
+                      'أسطول آليات ومعدات ثقيلة',
+                      'السلامة والامتثال أولاً'
+                    ]}
+                    typingSpeed={95}
+                    deletingSpeed={50}
+                    pauseTime={2500}
+                    cursorColor="#E4C77E"
+                  />
+                )}
+              </span>
             </h1>
 
             {/* Cinematic SVG drawing gold line */}
@@ -178,75 +246,107 @@ export default function Home({ lang, onOpenQuote, showToast }) {
               </Link>
             </div>
           </div>
+        </div>
 
-          {/* Reference Page/Slide indicator on right with prev/next navigation */}
-          <div className="hero-slide-nav">
-            <span className="slide-number">0{currentSlide + 1} / 0{heroSlides.length}</span>
-            <div className="slide-controls-row">
-              <button className="slide-btn" onClick={prevSlide} aria-label="Previous Slide">
-                <ArrowLeft size={16} />
-              </button>
-              <button className="slide-btn" onClick={nextSlide} aria-label="Next Slide">
-                <ArrowRight size={16} />
-              </button>
-            </div>
-            <div className="hero-slide-dots">
-              {heroSlides.map((_, dotIdx) => (
-                <button
-                  key={dotIdx}
-                  className={`slide-dot ${dotIdx === currentSlide ? 'active' : ''}`}
-                  onClick={() => setCurrentSlide(dotIdx)}
-                  aria-label={`Go to slide ${dotIdx + 1}`}
-                />
-              ))}
-            </div>
+        {/* Reference Page/Slide indicator positioned independently at bottom right */}
+        <div className="hero-slide-nav">
+          <span className="slide-number">0{currentSlide + 1} / 0{heroSlides.length}</span>
+          <div className="slide-controls-row">
+            <button className="slide-btn" onClick={prevSlide} aria-label="Previous Slide">
+              <ArrowLeft size={16} />
+            </button>
+            <button className="slide-btn" onClick={nextSlide} aria-label="Next Slide">
+              <ArrowRight size={16} />
+            </button>
+          </div>
+          <div className="hero-slide-dots">
+            {heroSlides.map((_, dotIdx) => (
+              <button
+                key={dotIdx}
+                className={`slide-dot ${dotIdx === currentSlide ? 'active' : ''}`}
+                onClick={() => setCurrentSlide(dotIdx)}
+                aria-label={`Go to slide ${dotIdx + 1}`}
+              />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 3. Reference Four Trust Cards Immediately Below Hero */}
+      {/* 3. Reference Four Trust Cards Immediately Below Hero with Stagger Reveal */}
       <section className="reference-trust-strip">
         <div className="container">
           <div className="reference-trust-grid">
-            <div className="ref-trust-item">
+            <motion.div 
+              className="ref-trust-item"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
               <div className="ref-trust-icon-box">
                 <Briefcase size={22} />
               </div>
               <div>
                 <div className="ref-trust-label">{lang === 'en' ? 'Professional' : 'الدعم الفني'}</div>
-                <div className="ref-trust-sub">{lang === 'en' ? 'Support Services' : 'خدمات الدعم المهني'}</div>
+                <div className="ref-trust-sub">
+                  <AnimatedCounter end={100} suffix="%" duration={1600} /> {lang === 'en' ? 'Vetted Support' : 'دعم مهني معتمد'}
+                </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="ref-trust-item">
+            <motion.div 
+              className="ref-trust-item"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               <div className="ref-trust-icon-box">
                 <Truck size={22} />
               </div>
               <div>
-                <div className="ref-trust-label">{lang === 'en' ? 'Equipment' : 'المعدات الثقيلة'}</div>
-                <div className="ref-trust-sub">{lang === 'en' ? 'Rentals' : 'تأجير الآليات'}</div>
+                <div className="ref-trust-label">{lang === 'en' ? 'Modern Fleet' : 'الأسطول الحديث'}</div>
+                <div className="ref-trust-sub">
+                  <AnimatedCounter end={85} suffix="+" duration={1800} /> {lang === 'en' ? 'Heavy Units' : 'آلية ومعدة'}
+                </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="ref-trust-item">
+            <motion.div 
+              className="ref-trust-item"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
               <div className="ref-trust-icon-box">
                 <Users size={22} />
               </div>
               <div>
-                <div className="ref-trust-label">{lang === 'en' ? 'Skilled & Experienced' : 'كوادر فنية ماهرة'}</div>
-                <div className="ref-trust-sub">{lang === 'en' ? 'Workforce' : 'قوى عاملة معتمدة'}</div>
+                <div className="ref-trust-label">{lang === 'en' ? 'Certified Crew' : 'قوى عاملة ماهرة'}</div>
+                <div className="ref-trust-sub">
+                  <AnimatedCounter end={500} suffix="+" duration={2000} /> {lang === 'en' ? 'Specialists' : 'كوادر مؤهلة'}
+                </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="ref-trust-item">
+            <motion.div 
+              className="ref-trust-item"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
               <div className="ref-trust-icon-box">
                 <ShieldCheck size={22} />
               </div>
               <div>
-                <div className="ref-trust-label">{lang === 'en' ? 'Modern & Reliable' : 'أسطول حديث وموثوق'}</div>
-                <div className="ref-trust-sub">{lang === 'en' ? 'Equipment' : 'معدات جاهزة للعمل'}</div>
+                <div className="ref-trust-label">{lang === 'en' ? 'Safety Record' : 'سجل السلامة'}</div>
+                <div className="ref-trust-sub">
+                  <AnimatedCounter end={0} suffix=" LTI" duration={1200} /> • {lang === 'en' ? 'Zero Harm' : 'صفر إصابات'}
+                </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -255,54 +355,64 @@ export default function Home({ lang, onOpenQuote, showToast }) {
       <section className="ref-services-section">
         <div className="container">
           <div className="ref-services-header">
-            <h2 className="ref-services-title">{lang === 'en' ? 'OUR SERVICES' : 'خدماتنا'}</h2>
-            <p className="ref-services-sub">
-              {lang === 'en' ? 'Comprehensive solutions for your construction and project needs' : 'حلول شاملة ومتكاملة لاحتياجات البناء والمشاريع الهندسية'}
-            </p>
+            <TextReveal delay={0.1}>
+              <h2 className="ref-services-title">{lang === 'en' ? 'OUR SERVICES' : 'خدماتنا'}</h2>
+            </TextReveal>
+            <TextReveal delay={0.2}>
+              <p className="ref-services-sub">
+                {lang === 'en' ? 'Comprehensive solutions for your construction and project needs' : 'حلول شاملة ومتكاملة لاحتياجات البناء والمشاريع الهندسية'}
+              </p>
+            </TextReveal>
           </div>
 
           <div className="ref-services-grid">
-            <div className="ref-service-card">
-              <div className="ref-service-img-wrap">
-                <img src="/images/service-manpower.jpg" alt="Professional Support Services" className="ref-service-img" />
+            <TiltCard>
+              <div className="ref-service-card">
+                <div className="ref-service-img-wrap">
+                  <img src="/images/service-manpower.jpg" alt="Professional Support Services" className="ref-service-img" />
+                </div>
+                <div className="ref-service-body">
+                  <h3 className="ref-service-heading">{lang === 'en' ? 'Professional Support Services' : 'خدمات الدعم المهني'}</h3>
+                  <p className="ref-service-text">{lang === 'en' ? 'Skilled manpower for all categories' : 'قوى عاملة وكوادر فنية متخصصة لكافة الفئات'}</p>
+                  <Link to="/services" className="ref-service-learn">
+                    <span>{lang === 'en' ? 'Learn More' : 'معرفة المزيد'}</span>
+                    <ArrowRight size={15} />
+                  </Link>
+                </div>
               </div>
-              <div className="ref-service-body">
-                <h3 className="ref-service-heading">{lang === 'en' ? 'Professional Support Services' : 'خدمات الدعم المهني'}</h3>
-                <p className="ref-service-text">{lang === 'en' ? 'Skilled manpower for all categories' : 'قوى عاملة وكوادر فنية متخصصة لكافة الفئات'}</p>
-                <Link to="/services" className="ref-service-learn">
-                  {lang === 'en' ? 'Learn More' : 'معرفة المزيد'}
-                  <ArrowRight size={15} />
-                </Link>
-              </div>
-            </div>
+            </TiltCard>
 
-            <div className="ref-service-card">
-              <div className="ref-service-img-wrap">
-                <img src="/images/service-equipment.jpg" alt="Equipment Rentals" className="ref-service-img" />
+            <TiltCard>
+              <div className="ref-service-card">
+                <div className="ref-service-img-wrap">
+                  <img src="/images/service-equipment.jpg" alt="Equipment Rentals" className="ref-service-img" />
+                </div>
+                <div className="ref-service-body">
+                  <h3 className="ref-service-heading">{lang === 'en' ? 'Equipment Rentals' : 'تأجير المعدات'}</h3>
+                  <p className="ref-service-text">{lang === 'en' ? 'Top-quality and well-maintained equipment' : 'معدات ذات جودة عالية وصيانة دورية مستمرة'}</p>
+                  <Link to="/equipment" className="ref-service-learn">
+                    <span>{lang === 'en' ? 'Learn More' : 'معرفة المزيد'}</span>
+                    <ArrowRight size={15} />
+                  </Link>
+                </div>
               </div>
-              <div className="ref-service-body">
-                <h3 className="ref-service-heading">{lang === 'en' ? 'Equipment Rentals' : 'تأجير المعدات'}</h3>
-                <p className="ref-service-text">{lang === 'en' ? 'Top-quality and well-maintained equipment' : 'معدات ذات جودة عالية وصيانة دورية مستمرة'}</p>
-                <Link to="/equipment" className="ref-service-learn">
-                  {lang === 'en' ? 'Learn More' : 'معرفة المزيد'}
-                  <ArrowRight size={15} />
-                </Link>
-              </div>
-            </div>
+            </TiltCard>
 
-            <div className="ref-service-card">
-              <div className="ref-service-img-wrap">
-                <img src="/images/service-civil.jpg" alt="Construction & Project Support" className="ref-service-img" />
+            <TiltCard>
+              <div className="ref-service-card">
+                <div className="ref-service-img-wrap">
+                  <img src="/images/service-civil.jpg" alt="Construction & Project Support" className="ref-service-img" />
+                </div>
+                <div className="ref-service-body">
+                  <h3 className="ref-service-heading">{lang === 'en' ? 'Construction & Project Support' : 'دعم الإنشاءات والمشاريع'}</h3>
+                  <p className="ref-service-text">{lang === 'en' ? 'Reliable workforce for your projects' : 'قوى عاملة مدربة وموثوقة لنجاح مشاريعكم'}</p>
+                  <Link to="/services" className="ref-service-learn">
+                    <span>{lang === 'en' ? 'Learn More' : 'معرفة المزيد'}</span>
+                    <ArrowRight size={15} />
+                  </Link>
+                </div>
               </div>
-              <div className="ref-service-body">
-                <h3 className="ref-service-heading">{lang === 'en' ? 'Construction & Project Support' : 'دعم الإنشاءات والمشاريع'}</h3>
-                <p className="ref-service-text">{lang === 'en' ? 'Reliable workforce for your projects' : 'قوى عاملة مدربة وموثوقة لنجاح مشاريعكم'}</p>
-                <Link to="/services" className="ref-service-learn">
-                  {lang === 'en' ? 'Learn More' : 'معرفة المزيد'}
-                  <ArrowRight size={15} />
-                </Link>
-              </div>
-            </div>
+            </TiltCard>
           </div>
         </div>
       </section>
@@ -313,10 +423,14 @@ export default function Home({ lang, onOpenQuote, showToast }) {
         <div className="ref-equipment-overlay"></div>
         <div className="container">
           <div className="ref-equipment-content">
-            <h2 className="ref-equipment-title">{lang === 'en' ? 'Modern Equipment' : 'معدات حديثة'}</h2>
-            <p className="ref-equipment-sub">
-              {lang === 'en' ? "We're providing the best customer service" : 'نقدم أفضل خدمة دعم وتأجير للعملاء على مدار الساعة'}
-            </p>
+            <TextReveal delay={0.1}>
+              <h2 className="ref-equipment-title">{lang === 'en' ? 'Modern Equipment' : 'معدات حديثة'}</h2>
+            </TextReveal>
+            <TextReveal delay={0.2}>
+              <p className="ref-equipment-sub">
+                {lang === 'en' ? "We're providing the best customer service" : 'نقدم أفضل خدمة دعم وتأجير للعملاء على مدار الساعة'}
+              </p>
+            </TextReveal>
             <Link to="/equipment" className="ref-equipment-btn">
               <span>{lang === 'en' ? 'View Equipment' : 'استعراض المعدات'}</span>
               <ArrowRight size={16} />
@@ -345,14 +459,18 @@ export default function Home({ lang, onOpenQuote, showToast }) {
                   <ShieldCheck size={16} />
                   <span>TUV & ARAMCO CERTIFIED PERSONNEL • 82 VERIFIED ROLES</span>
                 </div>
-                <h2 className="manpower-main-title">
-                  {lang === 'en' ? 'MANPOWER SUPPLY FOR RENTAL PURPOSES' : 'توريد القوى العاملة لأغراض الإيجار والتشغيل'}
-                </h2>
-                <p className="manpower-sub-title">
-                  {lang === 'en'
-                    ? 'Official role categories with verified monthly availability, third-party certification (TUV), and Saudi Aramco compliance standards.'
-                    : 'قائمة الوظائف المعتمدة مع توفر شهادات TUV واعتمادات أرامكو السعودية لتلبية عقود التشغيل الشهرية والسنوية.'}
-                </p>
+                <TextReveal delay={0.1}>
+                  <h2 className="manpower-main-title">
+                    {lang === 'en' ? 'MANPOWER SUPPLY FOR RENTAL PURPOSES' : 'توريد القوى العاملة لأغراض الإيجار والتشغيل'}
+                  </h2>
+                </TextReveal>
+                <TextReveal delay={0.2}>
+                  <p className="manpower-sub-title">
+                    {lang === 'en'
+                      ? 'Official role categories with verified monthly availability, third-party certification (TUV), and Saudi Aramco compliance standards.'
+                      : 'قائمة الوظائف المعتمدة مع توفر شهادات TUV واعتمادات أرامكو السعودية لتلبية عقود التشغيل الشهرية والسنوية.'}
+                  </p>
+                </TextReveal>
               </div>
 
               <div className="manpower-stats-pills">
@@ -580,23 +698,29 @@ export default function Home({ lang, onOpenQuote, showToast }) {
                 className="about-img" 
               />
               <div className="about-badge-card">
-                <div className="badge-stat">100%</div>
+                <div className="badge-stat">
+                  <AnimatedCounter end={100} suffix="%" duration={1800} />
+                </div>
                 <div className="badge-text">{lang === 'en' ? 'Saudi CR & Aramco Standard Compliant' : 'متوافق مع المعايير السعودية ومعايير الجودة'}</div>
               </div>
             </div>
 
             <div className="about-content-col">
               <span className="section-tag">{lang === 'en' ? 'WHO WE ARE' : 'من نحن'}</span>
-              <h2 className="section-heading">
-                {lang === 'en' 
-                  ? 'Your Trusted Partner in Construction & Project Support' 
-                  : 'شريكك الموثوق في البناء والدعم المتكامل للمشاريع'}
-              </h2>
-              <p className="about-lead">
-                {lang === 'en'
-                  ? 'ORJWAN is a general contracting and project support company in the Kingdom of Saudi Arabia, providing manpower solutions, technical support services, equipment rentals, and subcontracting support for civil and mechanical construction projects.'
-                  : 'مؤسسة أرجوان هي شركة رائدة في المقاولات العامة ودعم المشاريع بالمملكة العربية السعودية، تقدم حلول القوى العاملة، خدمات الدعم الفني، تأجير المعدات، والمقاولات الفرعية للأعمال المدنية والميكانيكية.'}
-              </p>
+              <TextReveal delay={0.1}>
+                <h2 className="section-heading">
+                  {lang === 'en' 
+                    ? 'Your Trusted Partner in Construction & Project Support' 
+                    : 'شريكك الموثوق في البناء والدعم المتكامل للمشاريع'}
+                </h2>
+              </TextReveal>
+              <TextReveal delay={0.2}>
+                <p className="about-lead">
+                  {lang === 'en'
+                    ? 'ORJWAN is a general contracting and project support company in the Kingdom of Saudi Arabia, providing manpower solutions, technical support services, equipment rentals, and subcontracting support for civil and mechanical construction projects.'
+                    : 'مؤسسة أرجوان هي شركة رائدة في المقاولات العامة ودعم المشاريع بالمملكة العربية السعودية، تقدم حلول القوى العاملة، خدمات الدعم الفني، تأجير المعدات، والمقاولات الفرعية للأعمال المدنية والميكانيكية.'}
+                </p>
+              </TextReveal>
               <p className="about-text">
                 {lang === 'en'
                   ? 'We bring together skilled professionals, practical project support, and dependable equipment to help clients meet their operational requirements with quality and speed.'
@@ -674,65 +798,64 @@ export default function Home({ lang, onOpenQuote, showToast }) {
           </div>
 
           <div className="why-grid">
-            <div className="why-card">
-              <div className="why-icon-box"><Award size={26} /></div>
-              <h3 className="why-card-title">{lang === 'en' ? 'Professional Expertise' : 'خبرة مهنية متقدمة'}</h3>
-              <p className="why-card-desc">
-                {lang === 'en'
-                  ? 'Personnel across technical, engineering, supervisory and construction roles with verified industrial credentials.'
-                  : 'كوادر هندسية وإشرافية وفنية ذات كفاءات معتمدة تلائم متطلبات المشاريع الكبرى.'}
-              </p>
-            </div>
-
-            <div className="why-card">
-              <div className="why-icon-box"><Compass size={26} /></div>
-              <h3 className="why-card-title">{lang === 'en' ? 'Project-Focused Solutions' : 'حلول مخصصة للمشاريع'}</h3>
-              <p className="why-card-desc">
-                {lang === 'en'
-                  ? 'Resources selected according to the client’s exact scope of work, timeline constraints and site location requirements.'
-                  : 'توفير الموارد البشرية والمعدات وفق النطاق المحدد والجدول الزمني المعتمد للعميل.'}
-              </p>
-            </div>
-
-            <div className="why-card">
-              <div className="why-icon-box"><Truck size={26} /></div>
-              <h3 className="why-card-title">{lang === 'en' ? 'Reliable Equipment Support' : 'أسطول معدات جاهز وموثوق'}</h3>
-              <p className="why-card-desc">
-                {lang === 'en'
-                  ? 'Rental options for a broad range of well-maintained construction and industrial machinery ready for immediate mobilization.'
-                  : 'معدات مفحوصة وصالحة للعمل الفوري مع خيارات التشغيل والصيانة الميدانية.'}
-              </p>
-            </div>
-
-            <div className="why-card">
-              <div className="why-icon-box"><ShieldCheck size={26} /></div>
-              <h3 className="why-card-title">{lang === 'en' ? 'Quality Commitment' : 'التزام صارم بالجودة'}</h3>
-              <p className="why-card-desc">
-                {lang === 'en'
-                  ? 'Focus on professional delivery, efficient coordination and adhering to Saudi Aramco & Royal Commission safety standards.'
-                  : 'التزام تام بأعلى معايير السلامة المهنية ومواصفات الجودة المعتمدة في المملكة.'}
-              </p>
-            </div>
-
-            <div className="why-card">
-              <div className="why-icon-box"><Clock size={26} /></div>
-              <h3 className="why-card-title">{lang === 'en' ? 'Responsive Communication' : 'تواصل فعال ودائم'}</h3>
-              <p className="why-card-desc">
-                {lang === 'en'
-                  ? 'Clear coordination from initial enquiry, quotation submission, mobilization, right through to project closeout.'
-                  : 'فريق عمل متجاوب وتنسيق مستمر من أول استفسار وحتى تسليم المشروع بنجاح.'}
-              </p>
-            </div>
-
-            <div className="why-card">
-              <div className="why-icon-box"><FileCheck size={26} /></div>
-              <h3 className="why-card-title">{lang === 'en' ? 'Full Regulatory Compliance' : 'امتثال نظامي وقانوني كامل'}</h3>
-              <p className="why-card-desc">
-                {lang === 'en'
-                  ? 'Registered General Contracting Est. with active CR No. 2053123342, verified documentation and licensed operators.'
-                  : 'مؤسسة رسمية بسجل تجاري رقم 2053123342 وتراخيص كاملة لجميع المعدات والمشغلين.'}
-              </p>
-            </div>
+            {[
+              {
+                icon: <Award size={26} />,
+                titleEn: 'Professional Expertise',
+                titleAr: 'خبرة مهنية متقدمة',
+                descEn: 'Personnel across technical, engineering, supervisory and construction roles with verified industrial credentials.',
+                descAr: 'كوادر هندسية وإشرافية وفنية ذات كفاءات معتمدة تلائم متطلبات المشاريع الكبرى.'
+              },
+              {
+                icon: <Compass size={26} />,
+                titleEn: 'Project-Focused Solutions',
+                titleAr: 'حلول مخصصة للمشاريع',
+                descEn: 'Resources selected according to the client’s exact scope of work, timeline constraints and site location requirements.',
+                descAr: 'توفير الموارد البشرية والمعدات وفق النطاق المحدد والجدول الزمني المعتمد للعميل.'
+              },
+              {
+                icon: <Truck size={26} />,
+                titleEn: 'Reliable Equipment Support',
+                titleAr: 'أسطول معدات جاهز وموثوق',
+                descEn: 'Rental options for a broad range of well-maintained construction and industrial machinery ready for immediate mobilization.',
+                descAr: 'معدات مفحوصة وصالحة للعمل الفوري مع خيارات التشغيل والصيانة الميدانية.'
+              },
+              {
+                icon: <ShieldCheck size={26} />,
+                titleEn: 'Quality Commitment',
+                titleAr: 'التزام صارم بالجودة',
+                descEn: 'Focus on professional delivery, efficient coordination and adhering to Saudi Aramco & Royal Commission safety standards.',
+                descAr: 'التزام تام بأعلى معايير السلامة المهنية ومواصفات الجودة المعتمدة في المملكة.'
+              },
+              {
+                icon: <Clock size={26} />,
+                titleEn: 'Responsive Communication',
+                titleAr: 'تواصل فعال ودائم',
+                descEn: 'Clear coordination from initial enquiry, quotation submission, mobilization, right through to project closeout.',
+                descAr: 'فريق عمل متجاوب وتنسيق مستمر من أول استفسار وحتى تسليم المشروع بنجاح.'
+              },
+              {
+                icon: <FileCheck size={26} />,
+                titleEn: 'Full Regulatory Compliance',
+                titleAr: 'امتثال نظامي وقانوني كامل',
+                descEn: 'Registered General Contracting Est. with active CR No. 2053123342, verified documentation and licensed operators.',
+                descAr: 'مؤسسة رسمية بسجل تجاري رقم 2053123342 وتراخيص كاملة لجميع المعدات والمشغلين.'
+              }
+            ].map((card, idx) => (
+              <motion.div 
+                key={idx} 
+                className="why-card"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-30px' }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+              >
+                <div className="why-icon-box">{card.icon}</div>
+                <h3 className="why-card-title">{lang === 'en' ? card.titleEn : card.titleAr}</h3>
+                <p className="why-card-desc">{lang === 'en' ? card.descEn : card.descAr}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

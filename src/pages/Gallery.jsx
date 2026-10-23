@@ -6,6 +6,8 @@ import {
 } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import ScrollReveal from '../components/ScrollReveal';
+import TextReveal from '../components/TextReveal';
+import TiltCard from '../components/TiltCard';
 import '../styles/Gallery.css';
 
 export default function Gallery({ lang, onOpenQuote }) {
@@ -99,14 +101,18 @@ export default function Gallery({ lang, onOpenQuote }) {
               <Sparkles size={16} />
               {lang === 'en' ? 'PROJECT PORTFOLIO & GALLERY' : 'معرض المشاريع والعمليات'}
             </span>
-            <h1 className="page-hero-title">
-              {lang === 'en' ? 'Our Work. Our Commitment on Ground.' : 'أعمالنا والتزامنا الميداني في كافة المشاريع'}
-            </h1>
-            <p className="page-hero-desc">
-              {lang === 'en'
-                ? 'Photographic documentation of our workforce, machinery operations, and contracting execution across the Kingdom of Saudi Arabia.'
-                : 'توثيق حي للكوادر البشرية، أسطول المعدات، وإنجازات مشاريعنا في مختلف المواقع الصناعية والمدنية بالمملكة.'}
-            </p>
+            <TextReveal delay={0.1}>
+              <h1 className="page-hero-title">
+                {lang === 'en' ? 'Our Work. Our Commitment on Ground.' : 'أعمالنا والتزامنا الميداني في كافة المشاريع'}
+              </h1>
+            </TextReveal>
+            <TextReveal delay={0.2}>
+              <p className="page-hero-desc">
+                {lang === 'en'
+                  ? 'Photographic documentation of our workforce, machinery operations, and contracting execution across the Kingdom of Saudi Arabia.'
+                  : 'توثيق حي للكوادر البشرية، أسطول المعدات، وإنجازات مشاريعنا في مختلف المواقع الصناعية والمدنية بالمملكة.'}
+              </p>
+            </TextReveal>
           </div>
         </section>
 
@@ -144,35 +150,37 @@ export default function Gallery({ lang, onOpenQuote }) {
             <div className="gallery-masonry-grid">
               {filteredItems.map((item, idx) => (
                 <ScrollReveal key={idx} delay={idx * 0.08}>
-                  <div 
-                    className="gallery-item-card"
-                    data-cursor-text="Zoom"
-                    onClick={() => openLightbox(idx)}
-                  >
-                    <div className="gallery-item-img-wrap">
-                      <img 
-                        src={item.img} 
-                        alt={item.title} 
-                        className="gallery-item-img"
-                        loading="lazy" 
-                      />
-                      <div className="gallery-zoom-badge">
-                        <ZoomIn size={18} />
+                  <TiltCard style={{ height: '100%' }}>
+                    <div 
+                      className="gallery-item-card"
+                      data-cursor-text="Zoom"
+                      onClick={() => openLightbox(idx)}
+                    >
+                      <div className="gallery-item-img-wrap">
+                        <img 
+                          src={item.img} 
+                          alt={item.title} 
+                          className="gallery-item-img" 
+                          loading="lazy" 
+                        />
+                        <div className="gallery-zoom-badge">
+                          <ZoomIn size={18} />
+                        </div>
+                        <span className="gallery-item-overlay">Verified Project Operations</span>
                       </div>
-                      <span className="gallery-item-overlay">Verified Project Operations</span>
+                      <div className="gallery-item-body">
+                        <h3 className="gallery-item-title">{item.title}</h3>
+                        <div className="gallery-item-meta">
+                          <MapPin size={15} />
+                          <span>{item.location}</span>
+                        </div>
+                        <p className="gallery-item-desc">{item.desc}</p>
+                        <div className="gallery-scope-tag">
+                          <strong>Scope:</strong> {item.scope}
+                        </div>
+                      </div>
                     </div>
-                    <div className="gallery-item-body">
-                      <h3 className="gallery-item-title">{item.title}</h3>
-                      <div className="gallery-item-meta">
-                        <MapPin size={15} />
-                        <span>{item.location}</span>
-                      </div>
-                      <p className="gallery-item-desc">{item.desc}</p>
-                      <div className="gallery-scope-tag">
-                        <strong>Scope:</strong> {item.scope}
-                      </div>
-                    </div>
-                  </div>
+                  </TiltCard>
                 </ScrollReveal>
               ))}
             </div>

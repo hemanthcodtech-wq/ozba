@@ -20,6 +20,9 @@ import {
   HardHat
 } from 'lucide-react';
 import AnimatedCounter from '../components/AnimatedCounter';
+import TextReveal from '../components/TextReveal';
+import TiltCard from '../components/TiltCard';
+import { motion } from 'motion/react';
 import '../styles/About.css';
 
 export default function About({ lang, onOpenQuote }) {
@@ -148,16 +151,20 @@ export default function About({ lang, onOpenQuote }) {
               <span className="about-gold-tag">
                 {lang === 'en' ? 'ABOUT ORJWAN' : 'عن أرجوان'}
               </span>
-              <h1 className="about-hero-title">
-                {lang === 'en' 
-                  ? 'Building Partnerships. Delivering Quality.' 
-                  : 'نبني الشراكات. ونلتزم بالجودة.'}
-              </h1>
-              <p className="about-hero-desc">
-                {lang === 'en'
-                  ? 'ORJWAN ZAKI BIN AHMED AL-RABH GENERAL CONTRACTING EST. is a Saudi Arabian contracting and project support company committed to providing professional manpower solutions, technical support services, equipment rentals, and civil and mechanical construction support.'
-                  : 'مؤسسة أرجوان زكي بن أحمد آل ربح للمقاولات العامة هي شركة وطنية سعودية رائدة في مجال المقاولات ودعم المشاريع، ملتزمة بتقديم حلول القوى العاملة المتخصصة، خدمات الدعم الفني، تأجير المعدات الثقيلة، ودعم الإنشاءات المدنية والميكانيكية.'}
-              </p>
+              <TextReveal delay={0.1}>
+                <h1 className="about-hero-title">
+                  {lang === 'en' 
+                    ? 'Building Partnerships. Delivering Quality.' 
+                    : 'نبني الشراكات. ونلتزم بالجودة.'}
+                </h1>
+              </TextReveal>
+              <TextReveal delay={0.2}>
+                <p className="about-hero-desc">
+                  {lang === 'en'
+                    ? 'ORJWAN ZAKI BIN AHMED AL-RABH GENERAL CONTRACTING EST. is a Saudi Arabian contracting and project support company committed to providing professional manpower solutions, technical support services, equipment rentals, and civil and mechanical construction support.'
+                    : 'مؤسسة أرجوان زكي بن أحمد آل ربح للمقاولات العامة هي شركة وطنية سعودية رائدة في مجال المقاولات ودعم المشاريع، ملتزمة بتقديم حلول القوى العاملة المتخصصة، خدمات الدعم الفني، تأجير المعدات الثقيلة، ودعم الإنشاءات المدنية والميكانيكية.'}
+                </p>
+              </TextReveal>
               <p className="about-hero-sub-desc">
                 {lang === 'en'
                   ? 'We aim to build lasting business relationships through dependable service, professional coordination, and a commitment to quality.'
@@ -219,16 +226,20 @@ export default function About({ lang, onOpenQuote }) {
               <span className="section-label-gold">
                 {lang === 'en' ? 'WHO WE ARE' : 'من نحن'}
               </span>
-              <h2 className="section-main-heading">
-                {lang === 'en' 
-                  ? 'Your Partner in Construction & Project Support' 
-                  : 'شريكك الموثوق في الإنشاءات ودعم المشاريع'}
-              </h2>
-              <p className="overview-lead">
-                {lang === 'en'
-                  ? 'ORJWAN supports construction, industrial, and maintenance projects by providing access to technical personnel, skilled workers, equipment rental solutions, and contracting support.'
-                  : 'تدعم أرجوان مشاريع البناء والقطاع الصناعي وأعمال الصيانة من خلال توفير الكوادر الفنية المعتمدة، والعمالة الماهرة، وحلول تأجير المعدات الثقيلة، وخدمات المقاولات المتكاملة.'}
-              </p>
+              <TextReveal delay={0.1}>
+                <h2 className="section-main-heading">
+                  {lang === 'en' 
+                    ? 'Your Partner in Construction & Project Support' 
+                    : 'شريكك الموثوق في الإنشاءات ودعم المشاريع'}
+                </h2>
+              </TextReveal>
+              <TextReveal delay={0.2}>
+                <p className="overview-lead">
+                  {lang === 'en'
+                    ? 'ORJWAN supports construction, industrial, and maintenance projects by providing access to technical personnel, skilled workers, equipment rental solutions, and contracting support.'
+                    : 'تدعم أرجوان مشاريع البناء والقطاع الصناعي وأعمال الصيانة من خلال توفير الكوادر الفنية المعتمدة، والعمالة الماهرة، وحلول تأجير المعدات الثقيلة، وخدمات المقاولات المتكاملة.'}
+                </p>
+              </TextReveal>
               <p className="overview-body">
                 {lang === 'en'
                   ? 'Our approach is centered on understanding client requirements, coordinating appropriate resources, and supporting project activities with professionalism and efficiency.'
@@ -440,56 +451,149 @@ export default function About({ lang, onOpenQuote }) {
         </div>
       </section>
 
-      {/* 8. Why Choose ORJWAN? — Dark Navy and Gold */}
+      {/* 8. Why Choose ORJWAN? — Enhanced Dark Navy & 24K Gold Stagger */}
       <section className="about-why-section section-padding">
         <div className="container">
           <div className="about-why-box">
-            <div className="section-header-center" style={{ marginBottom: 40 }}>
+            <div className="section-header-center" style={{ marginBottom: 40, textAlign: 'center' }}>
               <span className="section-label-gold">
                 {lang === 'en' ? 'WHY CHOOSE ORJWAN?' : 'لماذا تختار أرجوان؟'}
               </span>
-              <h2 className="about-why-heading">
-                {lang === 'en' 
-                  ? 'Trust, Reliability & Commitment to Quality' 
-                  : 'الثقة، الموثوقية والالتزام بالجودة'}
-              </h2>
-              <p className="about-why-lead">
-                {lang === 'en'
-                  ? 'Our approach combines professional support, suitable resources, and client-focused coordination to help meet the demands of construction and industrial projects.'
-                  : 'يجمع نهجنا بين الدعم المهني والموارد الملائمة والتنسيق المرتكز على العميل لتلبية متطلبات المشاريع الإنشائية والصناعية الكبرى.'}
-              </p>
+              <TextReveal delay={0.1}>
+                <h2 className="about-why-heading">
+                  {lang === 'en' 
+                    ? 'Trust, Reliability & Commitment to Quality' 
+                    : 'الثقة، الموثوقية والالتزام بالجودة'}
+                </h2>
+              </TextReveal>
+              <TextReveal delay={0.2}>
+                <p className="about-why-lead">
+                  {lang === 'en'
+                    ? 'Our approach combines professional support, suitable resources, and client-focused coordination to help meet the demands of construction and industrial projects.'
+                    : 'يجمع نهجنا بين الدعم المهني والموارد الملائمة والتنسيق المرتكز على العميل لتلبية متطلبات المشاريع الإنشائية والصناعية الكبرى.'}
+                </p>
+              </TextReveal>
             </div>
 
             <div className="about-why-pillars-grid">
-              <div className="why-pillar-card">
-                <div className="why-pillar-badge">01</div>
-                <h4 className="why-pillar-title">{lang === 'en' ? 'Broad Technical Capabilities' : 'قدرات فنية واسعة'}</h4>
-                <p className="why-pillar-desc">
-                  {lang === 'en' 
-                    ? 'Multiple professional, technical, supervisory, and skilled worker categories.' 
-                    : 'فئات متعددة من الكوادر المهنية والفنية والإشرافية والعمالة الماهرة.'}
-                </p>
-              </div>
+              
+              {/* Pillar 01 */}
+              <TiltCard className="why-tilt-wrap">
+                <motion.div 
+                  className="about-why-pillar-card"
+                  initial={{ opacity: 0, y: 35 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <div className="why-pillar-top-row">
+                    <div className="why-pillar-icon-box">
+                      <Users size={26} />
+                    </div>
+                    <div className="why-pillar-badge">01</div>
+                  </div>
 
-              <div className="why-pillar-card">
-                <div className="why-pillar-badge">02</div>
-                <h4 className="why-pillar-title">{lang === 'en' ? 'Flexible Project Support' : 'دعم مرن للمشاريع'}</h4>
-                <p className="why-pillar-desc">
-                  {lang === 'en' 
-                    ? "Solutions discussed around each client's scope and operational needs." 
-                    : 'حلول مصممة ومرنة تتكيف مع نطاق واحتياجات كل مشروع تشغيلية.'}
-                </p>
-              </div>
+                  <h4 className="why-pillar-title">
+                    {lang === 'en' ? 'Broad Technical Capabilities' : 'قدرات فنية واسعة'}
+                  </h4>
+                  
+                  <p className="why-pillar-desc">
+                    {lang === 'en' 
+                      ? 'Multiple professional, technical, supervisory, and skilled worker categories encompassing engineering, QA/QC, HSE, and specialized machinery operation.' 
+                      : 'فئات متعددة من الكوادر المهنية والفنية والإشرافية والعمالة الماهرة تشمل الهندسة، الجودة، السلامة، وتشغيل الآليات الثقيلة.'}
+                  </p>
 
-              <div className="why-pillar-card">
-                <div className="why-pillar-badge">03</div>
-                <h4 className="why-pillar-title">{lang === 'en' ? 'Commitment to Professional Service' : 'التزام بالخدمة الاحترافية'}</h4>
-                <p className="why-pillar-desc">
-                  {lang === 'en' 
-                    ? 'An emphasis on quality, communication, and agreed deliverables.' 
-                    : 'تركيز دائم على معايير الجودة، التواصل المستمر، والالتزام بالمخرجات المتفق عليها.'}
-                </p>
-              </div>
+                  <div className="why-pillar-tags">
+                    <span className="why-pillar-tag-item">
+                      <CheckCircle2 size={13} color="#C5A052" />
+                      {lang === 'en' ? '82+ Certified Job Roles' : '+82 مهنة وتخصص معتمد'}
+                    </span>
+                    <span className="why-pillar-tag-item">
+                      <CheckCircle2 size={13} color="#C5A052" />
+                      {lang === 'en' ? 'Aramco & TUV Ready' : 'معايير أرامكو وتوف'}
+                    </span>
+                  </div>
+                </motion.div>
+              </TiltCard>
+
+              {/* Pillar 02 */}
+              <TiltCard className="why-tilt-wrap">
+                <motion.div 
+                  className="about-why-pillar-card"
+                  initial={{ opacity: 0, y: 35 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <div className="why-pillar-top-row">
+                    <div className="why-pillar-icon-box">
+                      <Truck size={26} />
+                    </div>
+                    <div className="why-pillar-badge">02</div>
+                  </div>
+
+                  <h4 className="why-pillar-title">
+                    {lang === 'en' ? 'Flexible Project Support' : 'دعم مرن للمشاريع'}
+                  </h4>
+                  
+                  <p className="why-pillar-desc">
+                    {lang === 'en' 
+                      ? "Solutions discussed around each client's scope and operational needs, offering tailored shift patterns, turnkey packages, and rapid equipment mobilization." 
+                      : 'حلول مصممة ومرنة تتكيف مع نطاق واحتياجات كل مشروع تشغيلية، مع جداول ورديات مخصصة وتعبئة سريعة للمعدات في الموقع.'}
+                  </p>
+
+                  <div className="why-pillar-tags">
+                    <span className="why-pillar-tag-item">
+                      <CheckCircle2 size={13} color="#C5A052" />
+                      {lang === 'en' ? 'Kingdom-Wide Coverage' : 'تغطية شاملة للمملكة'}
+                    </span>
+                    <span className="why-pillar-tag-item">
+                      <CheckCircle2 size={13} color="#C5A052" />
+                      {lang === 'en' ? 'Rapid 24h Mobilization' : 'جاهزية توريد فورية'}
+                    </span>
+                  </div>
+                </motion.div>
+              </TiltCard>
+
+              {/* Pillar 03 */}
+              <TiltCard className="why-tilt-wrap">
+                <motion.div 
+                  className="about-why-pillar-card"
+                  initial={{ opacity: 0, y: 35 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <div className="why-pillar-top-row">
+                    <div className="why-pillar-icon-box">
+                      <ShieldCheck size={26} />
+                    </div>
+                    <div className="why-pillar-badge">03</div>
+                  </div>
+
+                  <h4 className="why-pillar-title">
+                    {lang === 'en' ? 'Commitment to Professional Service' : 'التزام بالخدمة الاحترافية'}
+                  </h4>
+                  
+                  <p className="why-pillar-desc">
+                    {lang === 'en' 
+                      ? 'An emphasis on quality, communication, and agreed deliverables supported by an active Saudi CR and strict adherence to industrial safety covenants.' 
+                      : 'تركيز دائم على معايير الجودة، التواصل المستمر، والالتزام بالمخرجات المتفق عليها بموجب سجل تجاري رسمي واشتراطات السلامة المهنية.'}
+                  </p>
+
+                  <div className="why-pillar-tags">
+                    <span className="why-pillar-tag-item">
+                      <CheckCircle2 size={13} color="#C5A052" />
+                      {lang === 'en' ? 'CR: 2053123342' : 'س.ت: ٢٠٥٣١٢٣٣٤٢'}
+                    </span>
+                    <span className="why-pillar-tag-item">
+                      <CheckCircle2 size={13} color="#C5A052" />
+                      {lang === 'en' ? 'Zero-Harm HSE Record' : 'سجل سلامة خالي من الإصابات'}
+                    </span>
+                  </div>
+                </motion.div>
+              </TiltCard>
+
             </div>
           </div>
         </div>

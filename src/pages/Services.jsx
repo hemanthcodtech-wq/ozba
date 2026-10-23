@@ -21,6 +21,9 @@ import {
   MapPin,
   FileText
 } from 'lucide-react';
+import TextReveal from '../components/TextReveal';
+import TiltCard from '../components/TiltCard';
+import { motion } from 'motion/react';
 import '../styles/Services.css';
 
 export default function Services({ lang, onOpenQuote }) {
@@ -256,16 +259,20 @@ export default function Services({ lang, onOpenQuote }) {
               <span className="services-gold-tag">
                 {lang === 'en' ? 'OUR SERVICES' : 'خدماتنا المتكاملة'}
               </span>
-              <h1 className="services-hero-title">
-                {lang === 'en' 
-                  ? 'Comprehensive Solutions for Construction & Industrial Projects' 
-                  : 'حلول شاملة وموثوقة للمشاريع الإنشائية والصناعية'}
-              </h1>
-              <p className="services-hero-desc">
-                {lang === 'en'
-                  ? 'ORJWAN ZAKI BIN AHMED AL-RABH GENERAL CONTRACTING EST. delivers professional support services, skilled manpower solutions, equipment rentals, and general contracting support to meet the diverse needs of construction, maintenance, civil, and mechanical projects across the Kingdom of Saudi Arabia.'
-                  : 'تقدم مؤسسة أرجوان زكي بن أحمد آل ربح للمقاولات العامة خدمات الدعم المهني المتخصص، حلول القوى العاملة، تأجير المعدات الثقيلة، والمقاولات العامة لتلبية احتياجات مشاريع الإنشاءات والصيانة المدنية والميكانيكية في المملكة العربية السعودية.'}
-              </p>
+              <TextReveal delay={0.1}>
+                <h1 className="services-hero-title">
+                  {lang === 'en' 
+                    ? 'Comprehensive Solutions for Construction & Industrial Projects' 
+                    : 'حلول شاملة وموثوقة للمشاريع الإنشائية والصناعية'}
+                </h1>
+              </TextReveal>
+              <TextReveal delay={0.2}>
+                <p className="services-hero-desc">
+                  {lang === 'en'
+                    ? 'ORJWAN ZAKI BIN AHMED AL-RABH GENERAL CONTRACTING EST. delivers professional support services, skilled manpower solutions, equipment rentals, and general contracting support to meet the diverse needs of construction, maintenance, civil, and mechanical projects across the Kingdom of Saudi Arabia.'
+                    : 'تقدم مؤسسة أرجوان زكي بن أحمد آل ربح للمقاولات العامة خدمات الدعم المهني المتخصص، حلول القوى العاملة، تأجير المعدات الثقيلة، والمقاولات العامة لتلبية احتياجات مشاريع الإنشاءات والصيانة المدنية والميكانيكية في المملكة العربية السعودية.'}
+                </p>
+              </TextReveal>
               <p className="services-hero-focus">
                 {lang === 'en'
                   ? 'Our focus is on dependable service, technically competent personnel, suitable equipment, and a commitment to quality and efficient project support.'
@@ -325,50 +332,56 @@ export default function Services({ lang, onOpenQuote }) {
           </div>
 
           <div className="ref-services-grid">
-            <div className="ref-service-card">
-              <div className="ref-service-img-wrap">
-                <img src="/images/service-manpower.jpg" alt="Professional Support Services" className="ref-service-img" />
+            <TiltCard>
+              <div className="ref-service-card">
+                <div className="ref-service-img-wrap">
+                  <img src="/images/service-manpower.jpg" alt="Professional Support Services" className="ref-service-img" />
+                </div>
+                <div className="ref-service-body">
+                  <span className="service-pillar-pill">01 • MANPOWER</span>
+                  <h3 className="ref-service-heading">{lang === 'en' ? 'Professional Support Services' : 'خدمات الدعم المهني'}</h3>
+                  <p className="ref-service-text">{lang === 'en' ? 'Skilled manpower for all categories including Aramco & TUV certified trades.' : 'قوى عاملة وكوادر فنية متخصصة لكافة الفئات مع اعتمادات أرامكو وتوف.'}</p>
+                  <a href="#manpower-categories" className="ref-service-learn">
+                    <span>{lang === 'en' ? 'Explore Manpower' : 'استعراض الكوادر'}</span>
+                    <ArrowRight size={15} />
+                  </a>
+                </div>
               </div>
-              <div className="ref-service-body">
-                <span className="service-pillar-pill">01 • MANPOWER</span>
-                <h3 className="ref-service-heading">{lang === 'en' ? 'Professional Support Services' : 'خدمات الدعم المهني'}</h3>
-                <p className="ref-service-text">{lang === 'en' ? 'Skilled manpower for all categories including Aramco & TUV certified trades.' : 'قوى عاملة وكوادر فنية متخصصة لكافة الفئات مع اعتمادات أرامكو وتوف.'}</p>
-                <a href="#manpower-categories" className="ref-service-learn">
-                  {lang === 'en' ? 'Explore Manpower' : 'استعراض الكوادر'}
-                  <ArrowRight size={15} />
-                </a>
-              </div>
-            </div>
+            </TiltCard>
 
-            <div className="ref-service-card">
-              <div className="ref-service-img-wrap">
-                <img src="/images/service-equipment.jpg" alt="Equipment Rentals" className="ref-service-img" />
+            <TiltCard>
+              <div className="ref-service-card">
+                <div className="ref-service-img-wrap">
+                  <img src="/images/service-equipment.jpg" alt="Equipment Rentals" className="ref-service-img" />
+                </div>
+                <div className="ref-service-body">
+                  <span className="service-pillar-pill">02 • MACHINERY</span>
+                  <h3 className="ref-service-heading">{lang === 'en' ? 'Equipment Rentals' : 'تأجير المعدات'}</h3>
+                  <p className="ref-service-text">{lang === 'en' ? 'Top-quality and well-maintained construction, lifting and earthmoving fleet.' : 'أسطول متكامل من معدات الرفع والحفر والنقل بصيانة دورية مستمرة.'}</p>
+                  <Link to="/equipment" className="ref-service-learn">
+                    <span>{lang === 'en' ? 'View Equipment Fleet' : 'استعراض أسطول المعدات'}</span>
+                    <ArrowRight size={15} />
+                  </Link>
+                </div>
               </div>
-              <div className="ref-service-body">
-                <span className="service-pillar-pill">02 • MACHINERY</span>
-                <h3 className="ref-service-heading">{lang === 'en' ? 'Equipment Rentals' : 'تأجير المعدات'}</h3>
-                <p className="ref-service-text">{lang === 'en' ? 'Top-quality and well-maintained construction, lifting and earthmoving fleet.' : 'أسطول متكامل من معدات الرفع والحفر والنقل بصيانة دورية مستمرة.'}</p>
-                <Link to="/equipment" className="ref-service-learn">
-                  {lang === 'en' ? 'View Equipment Fleet' : 'استعراض أسطول المعدات'}
-                  <ArrowRight size={15} />
-                </Link>
-              </div>
-            </div>
+            </TiltCard>
 
-            <div className="ref-service-card">
-              <div className="ref-service-img-wrap">
-                <img src="/images/service-civil.jpg" alt="Construction & Project Support" className="ref-service-img" />
+            <TiltCard>
+              <div className="ref-service-card">
+                <div className="ref-service-img-wrap">
+                  <img src="/images/service-civil.jpg" alt="Construction & Project Support" className="ref-service-img" />
+                </div>
+                <div className="ref-service-body">
+                  <span className="service-pillar-pill">03 • CONTRACTING</span>
+                  <h3 className="ref-service-heading">{lang === 'en' ? 'Construction & Project Support' : 'دعم الإنشاءات والمشاريع'}</h3>
+                  <p className="ref-service-text">{lang === 'en' ? 'Reliable workforce and subcontracting for civil and mechanical projects.' : 'تنفيذ الأعمال المدنية والميكانيكية والمقاولات من الباطن بأعلى المعايير.'}</p>
+                  <button onClick={onOpenQuote} className="ref-service-learn" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
+                    <span>{lang === 'en' ? 'Discuss Your Project' : 'ناقش مشروعك'}</span>
+                    <ArrowRight size={15} />
+                  </button>
+                </div>
               </div>
-              <div className="ref-service-body">
-                <span className="service-pillar-pill">03 • CONTRACTING</span>
-                <h3 className="ref-service-heading">{lang === 'en' ? 'Construction & Project Support' : 'دعم الإنشاءات والمشاريع'}</h3>
-                <p className="ref-service-text">{lang === 'en' ? 'Reliable workforce and subcontracting for civil and mechanical projects.' : 'تنفيذ الأعمال المدنية والميكانيكية والمقاولات من الباطن بأعلى المعايير.'}</p>
-                <button onClick={onOpenQuote} className="ref-service-learn" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
-                  {lang === 'en' ? 'Discuss Your Project' : 'ناقش مشروعك'}
-                  <ArrowRight size={15} />
-                </button>
-              </div>
-            </div>
+            </TiltCard>
           </div>
         </div>
       </section>
@@ -380,14 +393,18 @@ export default function Services({ lang, onOpenQuote }) {
             <span className="section-label-gold">
               {lang === 'en' ? 'CORE CAPABILITIES' : 'مجالات التميز'}
             </span>
-            <h2 className="section-main-title">
-              {lang === 'en' ? 'Our Core Services Breakdown' : 'التفاصيل الشاملة لخدماتنا'}
-            </h2>
-            <p className="section-sub-title">
-              {lang === 'en'
-                ? 'Professional expertise, dependable resources, and project-focused solutions.'
-                : 'خبرة مهنية متقدمة، موارد موثوقة، وحلول هندسية مكرسة لنجاح المشاريع.'}
-            </p>
+            <TextReveal delay={0.1}>
+              <h2 className="section-main-title">
+                {lang === 'en' ? 'Our Core Services Breakdown' : 'التفاصيل الشاملة لخدماتنا'}
+              </h2>
+            </TextReveal>
+            <TextReveal delay={0.2}>
+              <p className="section-sub-title">
+                {lang === 'en'
+                  ? 'Professional expertise, dependable resources, and project-focused solutions.'
+                  : 'خبرة مهنية متقدمة، موارد موثوقة، وحلول هندسية مكرسة لنجاح المشاريع.'}
+              </p>
+            </TextReveal>
           </div>
 
           <div className="core-services-list">
@@ -450,17 +467,21 @@ export default function Services({ lang, onOpenQuote }) {
             <span className="section-label-gold">
               {lang === 'en' ? 'TALENT NETWORK' : 'شبكة الكوادر المتخصصة'}
             </span>
-            <h2 className="section-main-title">
-              {lang === 'en' ? 'Our Professional Manpower Categories' : 'تصنيفات القوى العاملة المهنية'}
-            </h2>
+            <TextReveal delay={0.1}>
+              <h2 className="section-main-title">
+                {lang === 'en' ? 'Our Professional Manpower Categories' : 'تصنيفات القوى العاملة المهنية'}
+              </h2>
+            </TextReveal>
             <h3 className="section-sub-gold">
               {lang === 'en' ? 'The Right People for the Right Project' : 'الكوادر المناسبة للمشروع المناسب'}
             </h3>
-            <p className="section-sub-title">
-              {lang === 'en'
-                ? 'Our professional support services cover multiple technical and operational disciplines. Personnel requirements can be discussed according to the nature, schedule, and scope of each project.'
-                : 'تغطي خدمات الدعم المهني لدينا تخصصات فنية وتشغيلية متعددة تلبي متطلبات العقود الشهرية والسنوية ومشاريع التوسعة.'}
-            </p>
+            <TextReveal delay={0.2}>
+              <p className="section-sub-title">
+                {lang === 'en'
+                  ? 'Our professional support services cover multiple technical and operational disciplines. Personnel requirements can be discussed according to the nature, schedule, and scope of each project.'
+                  : 'تغطي خدمات الدعم المهني لدينا تخصصات فنية وتشغيلية متعددة تلبي متطلبات العقود الشهرية والسنوية ومشاريع التوسعة.'}
+              </p>
+            </TextReveal>
           </div>
 
           <div className="manpower-categories-grid">

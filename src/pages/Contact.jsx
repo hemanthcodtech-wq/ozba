@@ -4,6 +4,8 @@ import {
   Send, Copy, Check, Users, Wrench, HardHat, MessageSquare, 
   ChevronDown, HelpCircle, ExternalLink, Building2, Sparkles, MessageCircle
 } from 'lucide-react';
+import TextReveal from '../components/TextReveal';
+import TiltCard from '../components/TiltCard';
 import '../styles/Contact.css';
 
 export default function Contact({ lang, showToast }) {
@@ -152,15 +154,19 @@ Office Address: EDJC8593, 1st Floor, 8593 Al Khazzan St, Dammam 32242–3513, Ki
             <span>{lang === 'en' ? 'CONTACT ORJWAN' : 'تواصل مع أرجوان'}</span>
           </div>
 
-          <h1 className="contact-hero-title">
-            {lang === 'en' ? "Let's Build Something Great Together." : 'معاً.. نبني مستقبلاً استثنائياً لمشاريعك'}
-          </h1>
+          <TextReveal delay={0.1}>
+            <h1 className="contact-hero-title">
+              {lang === 'en' ? "Let's Build Something Great Together." : 'معاً.. نبني مستقبلاً استثنائياً لمشاريعك'}
+            </h1>
+          </TextReveal>
 
-          <p className="contact-hero-desc">
-            {lang === 'en'
-              ? 'Whether you require professional manpower, technical support services, construction equipment rentals, or general contracting support, our team is ready to discuss your project requirements across Saudi Arabia.'
-              : 'سواء كنت بحاجة إلى كوادر فنية مهنية، خدمات دعم فني، تأجير معدات إنشائية، أو دعم في المقاولات العامة، فريقنا مستعد لتلبية كافة متطلبات مشروعك في جميع أنحاء المملكة العربية السعودية.'}
-          </p>
+          <TextReveal delay={0.2}>
+            <p className="contact-hero-desc">
+              {lang === 'en'
+                ? 'Whether you require professional manpower, technical support services, construction equipment rentals, or general contracting support, our team is ready to discuss your project requirements across Saudi Arabia.'
+                : 'سواء كنت بحاجة إلى كوادر فنية مهنية، خدمات دعم فني، تأجير معدات إنشائية، أو دعم في المقاولات العامة، فريقنا مستعد لتلبية كافة متطلبات مشروعك في جميع أنحاء المملكة العربية السعودية.'}
+            </p>
+          </TextReveal>
 
           <p className="contact-hero-sub">
             {lang === 'en'
@@ -203,80 +209,86 @@ Office Address: EDJC8593, 1st Floor, 8593 Al Khazzan St, Dammam 32242–3513, Ki
 
                 <div className="contact-cards-stack">
                   {/* Office Location Card */}
-                  <div className="info-detail-card">
-                    <div className="info-icon-gold">
-                      <MapPin size={24} />
-                    </div>
-                    <div className="info-content-text">
-                      <h3 className="info-item-title">{lang === 'en' ? 'Our Office' : 'مقر المكتب الرئيسي'}</h3>
-                      <p className="info-item-value">
-                        EDJC8593, 1st Floor, 8593 Al Khazzan St,<br />
-                        Dammam 32242–3513, Saudi Arabia.
-                      </p>
-                      <a 
-                        href="https://maps.google.com/?q=Dammam+Saudi+Arabia" 
-                        target="_blank" 
-                        rel="noreferrer"
-                        className="info-sub-link"
-                      >
-                        <span>{lang === 'en' ? 'View on Google Maps' : 'عرض في خرائط جوجل'}</span>
-                        <ExternalLink size={14} />
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* Call Us Card */}
-                  <div className="info-detail-card highlight-card">
-                    <div className="info-icon-gold">
-                      <Phone size={24} />
-                    </div>
-                    <div className="info-content-text">
-                      <h3 className="info-item-title">{lang === 'en' ? 'Call Us' : 'اتصل بنا'}</h3>
-                      <div className="phone-big-call">
-                        <a href="tel:0568565143">0568565143</a>
+                  <TiltCard>
+                    <div className="info-detail-card">
+                      <div className="info-icon-gold">
+                        <MapPin size={24} />
                       </div>
-                      <p className="info-item-note">
-                        {lang === 'en' 
-                          ? 'Contact us to discuss your service or project requirements.'
-                          : 'اتصل بنا لمناقشة متطلبات مشروعك وتوريد الكوادر والمعدات فوراً.'}
-                      </p>
-                      <div className="phone-sub-line">
-                        <strong>{lang === 'en' ? 'Phone:' : 'الهاتف:'}</strong> 0568565143
-                      </div>
-                      <div className="direct-chat-row">
+                      <div className="info-content-text">
+                        <h3 className="info-item-title">{lang === 'en' ? 'Our Office' : 'مقر المكتب الرئيسي'}</h3>
+                        <p className="info-item-value">
+                          EDJC8593, 1st Floor, 8593 Al Khazzan St,<br />
+                          Dammam 32242–3513, Saudi Arabia.
+                        </p>
                         <a 
-                          href="https://wa.me/966567119230?text=Hello%20ORJWAN%20Contracting%2C%20I%20would%20like%20to%20enquire%20about%20your%20services."
+                          href="https://maps.google.com/?q=Dammam+Saudi+Arabia" 
                           target="_blank" 
                           rel="noreferrer"
-                          className="whatsapp-quick-btn"
+                          className="info-sub-link"
                         >
-                          <MessageCircle size={16} />
-                          <span>{lang === 'en' ? 'Instant WhatsApp Chat' : 'محادثة واتساب فورية'}</span>
+                          <span>{lang === 'en' ? 'View on Google Maps' : 'عرض في خرائط جوجل'}</span>
+                          <ExternalLink size={14} />
                         </a>
                       </div>
                     </div>
-                  </div>
+                  </TiltCard>
+
+                  {/* Call Us Card */}
+                  <TiltCard>
+                    <div className="info-detail-card highlight-card">
+                      <div className="info-icon-gold">
+                        <Phone size={24} />
+                      </div>
+                      <div className="info-content-text">
+                        <h3 className="info-item-title">{lang === 'en' ? 'Call Us' : 'اتصل بنا'}</h3>
+                        <div className="phone-big-call">
+                          <a href="tel:0568565143">0568565143</a>
+                        </div>
+                        <p className="info-item-note">
+                          {lang === 'en' 
+                            ? 'Contact us to discuss your service or project requirements.'
+                            : 'اتصل بنا لمناقشة متطلبات مشروعك وتوريد الكوادر والمعدات فوراً.'}
+                        </p>
+                        <div className="phone-sub-line">
+                          <strong>{lang === 'en' ? 'Phone:' : 'الهاتف:'}</strong> 0568565143
+                        </div>
+                        <div className="direct-chat-row">
+                          <a 
+                            href="https://wa.me/966567119230?text=Hello%20ORJWAN%20Contracting%2C%20I%20would%20like%20to%20enquire%20about%20your%20services."
+                            target="_blank" 
+                            rel="noreferrer"
+                            className="whatsapp-quick-btn"
+                          >
+                            <MessageCircle size={16} />
+                            <span>{lang === 'en' ? 'Instant WhatsApp Chat' : 'محادثة واتساب فورية'}</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </TiltCard>
 
                   {/* Commercial Registration Card */}
-                  <div className="info-detail-card cr-card">
-                    <div className="info-icon-gold">
-                      <ShieldCheck size={24} />
-                    </div>
-                    <div className="info-content-text">
-                      <h3 className="info-item-title">{lang === 'en' ? 'Commercial Registration' : 'السجل التجاري المعتمد'}</h3>
-                      <div className="cr-number-tag">
-                        <strong>CR No. 2053123342</strong>
+                  <TiltCard>
+                    <div className="info-detail-card cr-card">
+                      <div className="info-icon-gold">
+                        <ShieldCheck size={24} />
                       </div>
-                      <p className="cr-arabic-legal">
-                        مؤسسة ارجوان زكي بن أحمد آل ربح للمقاولات العامة
-                      </p>
-                      <div className="cr-meta-strip">
-                        <span>{lang === 'en' ? 'Kingdom of Saudi Arabia' : 'المملكة العربية السعودية'}</span>
-                        <span>•</span>
-                        <span>{lang === 'en' ? 'Class-A Compliance' : 'مطابقة أعلى معايير الجودة'}</span>
+                      <div className="info-content-text">
+                        <h3 className="info-item-title">{lang === 'en' ? 'Commercial Registration' : 'السجل التجاري المعتمد'}</h3>
+                        <div className="cr-number-tag">
+                          <strong>CR No. 2053123342</strong>
+                        </div>
+                        <p className="cr-arabic-legal">
+                          مؤسسة ارجوان زكي بن أحمد آل ربح للمقاولات العامة
+                        </p>
+                        <div className="cr-meta-strip">
+                          <span>{lang === 'en' ? 'Kingdom of Saudi Arabia' : 'المملكة العربية السعودية'}</span>
+                          <span>•</span>
+                          <span>{lang === 'en' ? 'Class-A Compliance' : 'مطابقة أعلى معايير الجودة'}</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </TiltCard>
 
                   {/* Email & Hours */}
                   <div className="info-detail-card">

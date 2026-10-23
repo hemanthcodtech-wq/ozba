@@ -675,75 +675,179 @@ body[dir="rtl"] .overview-badge-float {
 }
 
 /* 7. Why Choose ORJWAN? — Dark Navy & Gold */
+/* 7. Why Choose ORJWAN? — Ultra-Premium Dark Navy, Radial Glow & Metallic Gold */
 .about-why-section {
-  background: #081426;
+  background: radial-gradient(circle at 15% 20%, rgba(197, 160, 82, 0.12), transparent 45%),
+              radial-gradient(circle at 85% 80%, rgba(9, 36, 72, 0.5), transparent 45%),
+              linear-gradient(135deg, #051325 0%, #081D38 50%, #06172D 100%);
   color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(197, 160, 82, 0.25);
+  border-bottom: 1px solid rgba(197, 160, 82, 0.25);
+}
+
+.about-why-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
 }
 
 .about-why-box {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .about-why-heading {
-  font-size: 2.3rem;
+  font-size: clamp(2.2rem, 3.8vw, 3rem);
   font-weight: 800;
   color: #ffffff;
-  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  line-height: 1.25;
 }
 
 .about-why-lead {
-  font-size: 1.05rem;
-  color: #cbd5e1;
-  max-width: 740px;
+  font-size: 1.08rem;
+  color: #CBD5E1;
+  max-width: 780px;
   margin: 0 auto;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .about-why-pillars-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 32px;
+  margin-top: 48px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .about-why-pillars-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
 
-.why-pillar-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 14px;
-  padding: 34px 28px;
+.about-why-pillar-card {
+  background: linear-gradient(145deg, #0A254A 0%, #061830 100%) !important;
+  border: 1.5px solid rgba(197, 160, 82, 0.35) !important;
+  border-radius: 20px !important;
+  padding: 42px 34px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+.about-why-pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #9E782F, #F5D998, #C5A052);
+  opacity: 0.85;
+  transition: opacity 0.35s ease;
+}
+
+.about-why-pillar-card:hover {
+  background: linear-gradient(145deg, #0E305C 0%, #092448 100%) !important;
+  border-color: #F5D998 !important;
+  transform: translateY(-8px) !important;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5), 0 0 35px rgba(197, 160, 82, 0.25) !important;
+}
+
+.about-why-pillar-card:hover::before {
+  opacity: 1;
+}
+
+.why-pillar-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.why-pillar-icon-box {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(197, 160, 82, 0.2) 0%, rgba(197, 160, 82, 0.08) 100%);
+  border: 1.5px solid #C5A052;
+  color: #F5D998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
-.why-pillar-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: #e5a93c;
-  transform: translateY(-4px);
+.about-why-pillar-card:hover .why-pillar-icon-box {
+  background: linear-gradient(135deg, #C5A052 0%, #E4C77E 100%);
+  color: #06172D;
+  transform: scale(1.08) rotate(4deg);
+  box-shadow: 0 6px 20px rgba(197, 160, 82, 0.4);
 }
 
 .why-pillar-badge {
-  font-size: 1.8rem;
+  font-family: var(--font-en, sans-serif);
+  font-size: 2.4rem;
   font-weight: 900;
-  color: #f5c05c;
-  margin-bottom: 14px;
+  line-height: 1;
+  background: linear-gradient(135deg, #FFF0CA 0%, #F5D998 50%, #C5A052 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.04em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .why-pillar-title {
-  font-size: 1.22rem;
+  font-size: 1.35rem;
   font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 10px;
+  color: #FFFFFF !important;
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
 }
 
 .why-pillar-desc {
-  font-size: 0.94rem;
-  color: #cbd5e1;
-  line-height: 1.65;
+  font-size: 1rem;
+  color: #CBD5E1 !important;
+  line-height: 1.8;
+  margin: 0 0 24px;
+  flex-grow: 1;
+}
+
+.why-pillar-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+.why-pillar-tag-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(197, 160, 82, 0.3);
+  color: #F1D48B;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 8px;
+  letter-spacing: 0.02em;
 }
 
 /* 8. Company Information — Corporate Details Panel */

@@ -6,6 +6,8 @@ import {
 } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import ScrollReveal from '../components/ScrollReveal';
+import TextReveal from '../components/TextReveal';
+import TiltCard from '../components/TiltCard';
 import '../styles/Equipment.css';
 
 export default function Equipment({ lang, onOpenQuote }) {
@@ -114,14 +116,18 @@ export default function Equipment({ lang, onOpenQuote }) {
               <Sparkles size={16} />
               {lang === 'en' ? 'HEAVY EQUIPMENT RENTALS' : 'أسطول تأجير المعدات الثقيلة'}
             </span>
-            <h1 className="page-hero-title">
-              {lang === 'en' ? 'Reliable Machinery Fleet. Ready for Immediate Deployment.' : 'معدات وآليات ثقيلة موثوقة جاهزة للعمل الفوري'}
-            </h1>
-            <p className="page-hero-desc">
-              {lang === 'en'
-                ? 'Complete selection of lifting, earthmoving, transportation and power equipment with verified maintenance records and certified operators across Saudi Arabia.'
-                : 'مجموعة شاملة من الرافعات، الحفارات، الشاحنات، والمولدات المفحوصة والمطابقة للمواصفات السعودية مع مشغلين معتمدين.'}
-            </p>
+            <TextReveal delay={0.1}>
+              <h1 className="page-hero-title">
+                {lang === 'en' ? 'Reliable Machinery Fleet. Ready for Immediate Deployment.' : 'معدات وآليات ثقيلة موثوقة جاهزة للعمل الفوري'}
+              </h1>
+            </TextReveal>
+            <TextReveal delay={0.2}>
+              <p className="page-hero-desc">
+                {lang === 'en'
+                  ? 'Complete selection of lifting, earthmoving, transportation and power equipment with verified maintenance records and certified operators across Saudi Arabia.'
+                  : 'مجموعة شاملة من الرافعات، الحفارات، الشاحنات، والمولدات المفحوصة والمطابقة للمواصفات السعودية مع مشغلين معتمدين.'}
+              </p>
+            </TextReveal>
           </div>
         </section>
 
@@ -187,50 +193,52 @@ export default function Equipment({ lang, onOpenQuote }) {
               <div className="equipment-catalog-grid">
                 {filteredCatalog.map((item, idx) => (
                   <ScrollReveal key={item.id} delay={idx * 0.08}>
-                    <div className="equipment-catalog-card">
-                      <div className="equipment-card-img-wrap" data-cursor-text="View">
-                        <img 
-                          src={item.img} 
-                          alt={item.title} 
-                          className="equipment-card-img" 
-                          loading="lazy"
-                        />
-                        <span className="equipment-card-badge">Certified & Inspected</span>
-                      </div>
-                      <div className="equipment-card-body">
-                        <h3 className="equipment-card-title">{item.title}</h3>
-                        <p className="equipment-card-desc">{item.desc}</p>
-                        
-                        <ul className="equipment-card-features">
-                          {item.specs.map((sp, sIdx) => (
-                            <li key={sIdx}>
-                              <CheckCircle2 size={15} />
-                              <span>{sp}</span>
-                            </li>
-                          ))}
-                        </ul>
-
-                        <div className="equipment-actions-row">
-                          <Link 
-                            to="/quote" 
-                            className="btn-gold" 
-                            style={{ flex: 1, justifyContent: 'center' }}
-                          >
-                            <span>{lang === 'en' ? 'Request Rental Quote' : 'طلب تسعيرة الإيجار'}</span>
-                            <ArrowRight size={16} />
-                          </Link>
+                    <TiltCard style={{ height: '100%' }}>
+                      <div className="equipment-catalog-card">
+                        <div className="equipment-card-img-wrap" data-cursor-text="View">
+                          <img 
+                            src={item.img} 
+                            alt={item.title} 
+                            className="equipment-card-img" 
+                            loading="lazy"
+                          />
+                          <span className="equipment-card-badge">Certified & Inspected</span>
+                        </div>
+                        <div className="equipment-card-body">
+                          <h3 className="equipment-card-title">{item.title}</h3>
+                          <p className="equipment-card-desc">{item.desc}</p>
                           
-                          <button 
-                            type="button"
-                            onClick={() => setSelectedEquip(item)}
-                            className="btn-details-ghost"
-                            title={lang === 'en' ? 'View Specifications' : 'عرض المواصفات'}
-                          >
-                            <Info size={18} />
-                          </button>
+                          <ul className="equipment-card-features">
+                            {item.specs.map((sp, sIdx) => (
+                              <li key={sIdx}>
+                                <CheckCircle2 size={15} />
+                                <span>{sp}</span>
+                              </li>
+                            ))}
+                          </ul>
+
+                          <div className="equipment-actions-row">
+                            <Link 
+                              to="/quote" 
+                              className="btn-gold" 
+                              style={{ flex: 1, justifyContent: 'center' }}
+                            >
+                              <span>{lang === 'en' ? 'Request Rental Quote' : 'طلب تسعيرة الإيجار'}</span>
+                              <ArrowRight size={16} />
+                            </Link>
+                            
+                            <button 
+                              type="button"
+                              onClick={() => setSelectedEquip(item)}
+                              className="btn-details-ghost"
+                              title={lang === 'en' ? 'View Specifications' : 'عرض المواصفات'}
+                            >
+                              <Info size={18} />
+                            </button>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </TiltCard>
                   </ScrollReveal>
                 ))}
               </div>

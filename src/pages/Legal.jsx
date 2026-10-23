@@ -16,6 +16,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
+import TextReveal from '../components/TextReveal';
 import '../styles/Legal.css';
 
 export default function Legal({ lang, type = 'privacy' }) {
@@ -92,13 +93,17 @@ export default function Legal({ lang, type = 'privacy' }) {
               {lang === 'en' ? currentMeta.badgeEn : currentMeta.badgeAr}
             </div>
             
-            <h1 className="legal-hero-title">
-              {lang === 'en' ? currentMeta.titleEn : currentMeta.titleAr}
-            </h1>
+            <TextReveal delay={0.1}>
+              <h1 className="legal-hero-title">
+                {lang === 'en' ? currentMeta.titleEn : currentMeta.titleAr}
+              </h1>
+            </TextReveal>
             
-            <p className="legal-hero-desc">
-              {lang === 'en' ? currentMeta.descEn : currentMeta.descAr}
-            </p>
+            <TextReveal delay={0.2}>
+              <p className="legal-hero-desc">
+                {lang === 'en' ? currentMeta.descEn : currentMeta.descAr}
+              </p>
+            </TextReveal>
 
             <div className="legal-meta-strip">
               <div className="legal-meta-item">

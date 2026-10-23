@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import ScrollReveal from '../components/ScrollReveal';
+import TextReveal from '../components/TextReveal';
 import '../styles/Quote.css';
 
 export default function Quote({ lang, showToast }) {
@@ -127,14 +128,18 @@ export default function Quote({ lang, showToast }) {
               <Sparkles size={16} />
               {lang === 'en' ? 'COMMERCIAL INQUIRY & ESTIMATIONS' : 'طلب عروض الأسعار والتسعير الرسمي'}
             </span>
-            <h1 className="quote-hero-title">
-              {lang === 'en' ? 'Request a Formal Project Quotation' : 'طلب عرض أسعار رسمي لمشروعك'}
-            </h1>
-            <p className="quote-hero-desc">
-              {lang === 'en'
-                ? 'Complete our 5-step structured RFP form. Our commercial and engineering operations team in Dammam will review your BOQ and submit an official proposal within 24 hours.'
-                : 'أكمل نموذج الاستفسار المكون من 5 خطوات. سيقوم فريق التسعير وإدارة العمليات بالدمام بدراسة جدول الكميات وتزويدكم بعرض رسمي خلال 24 ساعة.'}
-            </p>
+            <TextReveal delay={0.1}>
+              <h1 className="quote-hero-title">
+                {lang === 'en' ? 'Request a Formal Project Quotation' : 'طلب عرض أسعار رسمي لمشروعك'}
+              </h1>
+            </TextReveal>
+            <TextReveal delay={0.2}>
+              <p className="quote-hero-desc">
+                {lang === 'en'
+                  ? 'Complete our 5-step structured RFP form. Our commercial and engineering operations team in Dammam will review your BOQ and submit an official proposal within 24 hours.'
+                  : 'أكمل نموذج الاستفسار المكون من 5 خطوات. سيقوم فريق التسعير وإدارة العمليات بالدمام بدراسة جدول الكميات وتزويدكم بعرض رسمي خلال 24 ساعة.'}
+              </p>
+            </TextReveal>
           </div>
         </section>
 
