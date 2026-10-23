@@ -1,0 +1,61 @@
+/* Branded Initial Splash Screen - Premium White Background Aesthetic */
+
+.splash-screen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #FFFFFF;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.splash-logo-wrap {
+  margin-bottom: 22px;
+  background: #FFFFFF;
+  padding: 18px 32px;
+  border-radius: 16px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 10px 30px rgba(9, 36, 72, 0.08);
+}
+
+.splash-logo {
+  height: 85px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.splash-gold-line {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #C5A052, #E4C77E, transparent);
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.splash-company-name {
+  color: #092448;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.splash-cr {
+  color: #64748B;
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}

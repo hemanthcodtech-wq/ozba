@@ -1,0 +1,945 @@
+/* --------------------------------------------------------------------------
+   ABOUT US PAGE STYLING — ORJWAN CONTRACTING
+   -------------------------------------------------------------------------- */
+
+.about-page-wrap {
+  background: #ffffff;
+  color: #1e293b;
+}
+
+/* 1. Hero Section — About Our Company */
+.about-hero-section {
+  position: relative;
+  background: #081426;
+  color: #ffffff;
+  padding: 90px 0 100px;
+  overflow: hidden;
+}
+
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.about-hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(8, 20, 38, 0.96) 0%,
+    rgba(8, 20, 38, 0.88) 50%,
+    rgba(8, 20, 38, 0.6) 100%
+  );
+}
+
+.about-hero-container {
+  position: relative;
+  z-index: 1;
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 50px;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+.about-hero-content {
+  max-width: 100%;
+}
+
+.about-gold-tag {
+  display: inline-block;
+  background: rgba(229, 169, 60, 0.2);
+  border: 1.5px solid #e5a93c;
+  color: #f5c05c;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  padding: 6px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.about-hero-title {
+  font-size: 2.7rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.about-hero-desc {
+  font-size: 1.05rem;
+  color: #cbd5e1;
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+.about-hero-sub-desc {
+  font-size: 0.98rem;
+  color: #e2e8f0;
+  border-left: 3px solid #e5a93c;
+  padding-left: 16px;
+  line-height: 1.65;
+  margin-bottom: 34px;
+}
+
+body[dir="rtl"] .about-hero-sub-desc {
+  border-left: none;
+  border-right: 3px solid #e5a93c;
+  padding-left: 0;
+  padding-right: 16px;
+}
+
+.about-hero-btns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Right Media Card */
+.about-hero-media-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.about-hero-card {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid rgba(229, 169, 60, 0.55);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55), 0 0 30px rgba(229, 169, 60, 0.2);
+  background: #081426;
+}
+
+.about-hero-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.about-hero-card:hover .about-hero-card-img {
+  transform: scale(1.06);
+}
+
+.about-hero-card-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 20, 38, 0.05) 0%,
+    rgba(8, 20, 38, 0.3) 45%,
+    rgba(8, 20, 38, 0.95) 100%
+  );
+  pointer-events: none;
+}
+
+.about-hero-card-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 2;
+}
+
+.about-caption-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.95);
+  color: #ffffff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.about-caption-title {
+  color: #f5c05c;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* 2. Company Overview — Split Image and Text */
+.about-overview-section {
+  background: #ffffff;
+}
+
+.about-overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .about-overview-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.about-overview-media {
+  position: relative;
+}
+
+.overview-img-wrapper {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(8, 20, 38, 0.12);
+  border: 1px solid #e2e8f0;
+}
+
+.overview-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.overview-badge-float {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  background: rgba(8, 20, 38, 0.92);
+  border: 1.5px solid #e5a93c;
+  padding: 14px 22px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+body[dir="rtl"] .overview-badge-float {
+  right: auto;
+  left: 24px;
+}
+
+.overview-badge-num {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #f5c05c;
+  line-height: 1;
+}
+
+.overview-badge-lbl {
+  font-size: 0.74rem;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.about-overview-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.overview-lead {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #081426;
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+.overview-body {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.overview-stats-animated-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #06172D 0%, #092448 100%);
+  border: 1px solid rgba(197, 160, 82, 0.35);
+  border-radius: 12px;
+  padding: 18px 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 6px 20px rgba(9, 36, 72, 0.15);
+}
+
+.stat-counter-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.stat-counter-number {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #E4C77E;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.stat-counter-label {
+  font-size: 0.76rem;
+  color: #CBD5E1;
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+.stat-counter-divider {
+  width: 1px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 0 12px;
+}
+
+@media (max-width: 640px) {
+  .overview-stats-animated-bar {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+  .stat-counter-divider {
+    width: 60%;
+    height: 1px;
+    margin: 4px 0;
+  }
+}
+
+.overview-highlights-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.highlight-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 9px 16px;
+  border-radius: 30px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.highlight-icon {
+  color: #10b981;
+}
+
+/* 3. Mission & Vision — Two Premium Cards */
+.about-mv-section {
+  background: #f8fafc;
+}
+
+.about-mv-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+}
+
+@media (max-width: 868px) {
+  .about-mv-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-mv-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 40px;
+  box-shadow: 0 8px 24px rgba(8, 20, 38, 0.05);
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.about-mv-card:hover {
+  transform: translateY(-6px);
+  border-color: #e5a93c;
+  box-shadow: 0 18px 36px rgba(8, 20, 38, 0.12);
+}
+
+.mv-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.mv-icon-box {
+  width: 58px;
+  height: 58px;
+  background: rgba(8, 20, 38, 0.06);
+  color: #081426;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cbd5e1;
+}
+
+.mv-icon-box.gold-icon {
+  background: rgba(229, 169, 60, 0.15);
+  color: #c48b26;
+  border-color: rgba(229, 169, 60, 0.35);
+}
+
+.mv-card-tag {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.mv-card-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #081426;
+  margin-bottom: 14px;
+}
+
+.mv-card-desc {
+  font-size: 1.02rem;
+  color: #475569;
+  line-height: 1.75;
+}
+
+/* 4. Our Core Values — Six Icon Cards */
+.about-values-section {
+  background: #ffffff;
+}
+
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.value-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 32px 26px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(8, 20, 38, 0.04);
+}
+
+.value-card:hover {
+  border-color: #e5a93c;
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(8, 20, 38, 0.09);
+}
+
+.value-icon-wrap {
+  width: 52px;
+  height: 52px;
+  background: rgba(229, 169, 60, 0.16);
+  border: 1.5px solid rgba(229, 169, 60, 0.45);
+  color: #c48b26;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.value-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #081426;
+  margin-bottom: 10px;
+}
+
+.value-desc {
+  font-size: 0.94rem;
+  color: #64748b;
+  line-height: 1.65;
+}
+
+/* 5. What We Do — Three Service Blocks */
+.about-what-we-do-section {
+  background: #f8fafc;
+}
+
+.what-we-do-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 992px) {
+  .what-we-do-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.what-we-do-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 6px 18px rgba(8, 20, 38, 0.05);
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.what-we-do-card:hover {
+  transform: translateY(-6px);
+  border-color: #cbd5e1;
+  box-shadow: 0 16px 32px rgba(8, 20, 38, 0.1);
+}
+
+.what-we-do-media {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #081426;
+}
+
+.what-we-do-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.what-we-do-card:hover .what-we-do-img {
+  transform: scale(1.08);
+}
+
+.what-we-do-num {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 36px;
+  height: 36px;
+  background: #081426;
+  border: 1.5px solid #e5a93c;
+  color: #f5c05c;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.92rem;
+  font-weight: 800;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+.what-we-do-body {
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.what-we-do-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #081426;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.what-we-do-desc {
+  font-size: 0.93rem;
+  color: #475569;
+  line-height: 1.65;
+  flex-grow: 1;
+  margin-bottom: 22px;
+}
+
+.what-we-do-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #c48b26;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.what-we-do-link:hover {
+  color: #081426;
+  transform: translateX(4px);
+}
+
+/* 6. Our Approach — Four-Step Timeline */
+.about-approach-section {
+  background: #ffffff;
+}
+
+.approach-timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 28px;
+  position: relative;
+}
+
+.approach-timeline-grid::before {
+  content: '';
+  position: absolute;
+  top: 57px;
+  left: 30px;
+  right: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, #092448 0%, #C5A052 50%, #092448 100%);
+  z-index: 1;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .approach-timeline-grid::before {
+    display: none;
+  }
+}
+
+.approach-step-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 34px 26px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 2;
+}
+
+.approach-step-box:hover {
+  background: #ffffff;
+  border-color: #C5A052;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(9, 36, 72, 0.1), 0 0 12px rgba(197, 160, 82, 0.15);
+}
+
+.approach-step-num {
+  width: 46px;
+  height: 46px;
+  background: #081426;
+  color: #f5c05c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(8, 20, 38, 0.2);
+}
+
+.approach-step-title {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #081426;
+  margin-bottom: 12px;
+}
+
+.approach-step-desc {
+  font-size: 0.92rem;
+  color: #64748b;
+  line-height: 1.65;
+}
+
+/* 7. Why Choose ORJWAN? — Dark Navy & Gold */
+.about-why-section {
+  background: #081426;
+  color: #ffffff;
+}
+
+.about-why-box {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-why-heading {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.about-why-lead {
+  font-size: 1.05rem;
+  color: #cbd5e1;
+  max-width: 740px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.about-why-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 900px) {
+  .about-why-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.why-pillar-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 34px 28px;
+  transition: all 0.3s ease;
+}
+
+.why-pillar-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #e5a93c;
+  transform: translateY(-4px);
+}
+
+.why-pillar-badge {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #f5c05c;
+  margin-bottom: 14px;
+}
+
+.why-pillar-title {
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.why-pillar-desc {
+  font-size: 0.94rem;
+  color: #cbd5e1;
+  line-height: 1.65;
+}
+
+/* 8. Company Information — Corporate Details Panel */
+.about-company-info-section {
+  background: #ffffff;
+}
+
+.corporate-panel {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 44px;
+  box-shadow: 0 8px 24px rgba(8, 20, 38, 0.05);
+}
+
+.corporate-panel-header {
+  margin-bottom: 34px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.corporate-badge-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #c48b26;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.corp-header-icon {
+  color: #e5a93c;
+}
+
+.corp-panel-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #081426;
+}
+
+.corporate-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 868px) {
+  .corporate-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.corp-detail-cell {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.corp-cell-lbl {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.corp-cell-val {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: #081426;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.corp-cell-val.gold-val {
+  font-size: 1.4rem;
+  color: #c48b26;
+}
+
+.corp-cell-sub {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.corp-phone-link {
+  color: #081426;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.corp-phone-link:hover {
+  color: #c48b26;
+}
+
+/* 9. Call to Action — Full-Width Banner */
+.about-cta-banner-section {
+  position: relative;
+  background: #081426;
+  color: #ffffff;
+  padding: 85px 0;
+  overflow: hidden;
+}
+
+.about-cta-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.about-cta-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.28;
+}
+
+.about-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(8, 20, 38, 0.95) 0%,
+    rgba(8, 20, 38, 0.9) 100%
+  );
+}
+
+.about-cta-container {
+  position: relative;
+  z-index: 1;
+}
+
+.about-cta-box {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-gold-badge {
+  display: inline-block;
+  background: rgba(229, 169, 60, 0.2);
+  border: 1.5px solid #e5a93c;
+  color: #f5c05c;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  padding: 5px 16px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.cta-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.cta-desc {
+  font-size: 1.05rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto 34px;
+}
+
+.about-cta-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-cta-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  padding: 15px 26px;
+  border-radius: 8px;
+  font-size: 0.96rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-cta-quote:hover {
+  background: #ffffff;
+  color: #081426;
+  border-color: #ffffff;
+}

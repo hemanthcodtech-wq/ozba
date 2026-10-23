@@ -1,0 +1,85 @@
+/* Back To Top Floating Progress Button */
+
+.back-to-top-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #092448;
+  border: 1px solid rgba(197, 160, 82, 0.4);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9998;
+  box-shadow: 0 8px 24px rgba(6, 23, 45, 0.5), 0 0 12px rgba(197, 160, 82, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.9);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+}
+
+body[dir="rtl"] .back-to-top-btn {
+  right: auto;
+  left: 28px;
+}
+
+.back-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.back-to-top-btn:hover {
+  background: #06172D;
+  border-color: #E4C77E;
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 12px 30px rgba(6, 23, 45, 0.6), 0 0 18px rgba(197, 160, 82, 0.4);
+}
+
+.progress-ring-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.progress-ring-indicator {
+  transition: stroke-dashoffset 0.15s linear;
+}
+
+.back-to-top-icon {
+  position: relative;
+  z-index: 2;
+  color: #E4C77E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+
+.back-to-top-btn:hover .back-to-top-icon {
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .back-to-top-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 46px;
+    height: 46px;
+  }
+  body[dir="rtl"] .back-to-top-btn {
+    left: 20px;
+  }
+  .progress-ring-svg {
+    width: 46px;
+    height: 46px;
+  }
+}

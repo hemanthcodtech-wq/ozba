@@ -1,0 +1,365 @@
+/* Equipment Page Dedicated Styles - ORJWAN Master Standards */
+
+.equipment-filter-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.search-bar-wrap {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+body[dir="rtl"] .search-icon {
+  left: auto;
+  right: 16px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 13px 18px 13px 44px;
+  border-radius: 8px;
+  border: 1px solid #e2e7ef;
+  font-size: 0.95rem;
+  background: #ffffff;
+  color: #172438;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+body[dir="rtl"] .search-input {
+  padding: 13px 44px 13px 18px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #c5a052;
+  box-shadow: 0 0 0 3px rgba(197, 160, 82, 0.2);
+}
+
+.category-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: #ffffff;
+  border: 1px solid #e2e7ef;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  border-color: #c5a052;
+  color: #092448;
+}
+
+.tab-btn.active {
+  background: #092448;
+  color: #e4c77e;
+  border-color: #092448;
+  box-shadow: 0 4px 12px rgba(9, 36, 72, 0.15);
+}
+
+.catalog-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e2e7ef;
+  font-size: 0.86rem;
+}
+
+.results-count {
+  font-weight: 700;
+  color: #092448;
+}
+
+.availability-notice {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #657184;
+}
+
+.availability-notice svg {
+  color: #c5a052;
+}
+
+.empty-catalog-state {
+  text-align: center;
+  padding: 70px 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e7ef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.equipment-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.equipment-catalog-card {
+  background: #ffffff;
+  border: 1px solid #e2e7ef;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.equipment-catalog-card:hover {
+  transform: translateY(-6px);
+  border-color: #c5a052;
+  box-shadow: 0 14px 30px rgba(9, 36, 72, 0.1);
+}
+
+.equipment-card-img-wrap {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+  background: #06172d;
+}
+
+.equipment-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.equipment-catalog-card:hover .equipment-card-img {
+  transform: scale(1.08);
+}
+
+.equipment-card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(6, 23, 45, 0.92);
+  color: #e4c77e;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(197, 160, 82, 0.45);
+  backdrop-filter: blur(4px);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.equipment-card-badge::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: badgePulse 2s infinite;
+}
+
+@keyframes badgePulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+body[dir="rtl"] .equipment-card-badge {
+  right: auto;
+  left: 12px;
+}
+
+.equipment-card-body {
+  padding: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.equipment-card-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #092448;
+  margin-bottom: 8px;
+}
+
+.equipment-card-desc {
+  font-size: 0.88rem;
+  color: #657184;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.equipment-card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  font-size: 0.82rem;
+  color: #172438;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.equipment-card-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.equipment-card-features li svg {
+  color: #c5a052;
+  flex-shrink: 0;
+}
+
+.equipment-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.btn-details-ghost {
+  background: #f1f5f9;
+  border: 1px solid #e2e7ef;
+  color: #092448;
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-details-ghost:hover {
+  background: #e2e8f0;
+  border-color: #c5a052;
+  color: #c5a052;
+}
+
+/* Bottom Custom Fleet CTA Card */
+.equipment-custom-cta-card {
+  margin-top: 60px;
+  background: linear-gradient(135deg, #06172d 0%, #092448 60%, #113665 100%);
+  color: #ffffff;
+  border-radius: 14px;
+  padding: 44px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  border: 1px solid rgba(197, 160, 82, 0.3);
+}
+
+.custom-cta-text {
+  max-width: 650px;
+}
+
+.custom-cta-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.custom-cta-desc {
+  font-size: 0.96rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.custom-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-call-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-call-outline:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #e4c77e;
+  color: #e4c77e;
+}
+
+@media (max-width: 1024px) {
+  .equipment-catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .equipment-catalog-grid {
+    grid-template-columns: 1fr;
+  }
+  .equipment-custom-cta-card {
+    padding: 30px 20px;
+  }
+  .custom-cta-actions {
+    width: 100%;
+  }
+  .custom-cta-actions .btn-gold,
+  .custom-cta-actions .btn-call-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,261 @@
+.compliance-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(6, 23, 45, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.compliance-modal-container {
+  background: #092448;
+  border: 1px solid rgba(197, 160, 82, 0.45);
+  border-radius: 20px;
+  max-width: 860px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.5), 0 0 50px rgba(197, 160, 82, 0.15);
+  color: #FFFFFF;
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.compliance-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.modal-shield-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #C5A052 0%, #E4C77E 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.compliance-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0 0 4px;
+}
+
+.compliance-subtitle {
+  font-size: 0.82rem;
+  color: #F5D998;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.compliance-close-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #CBD5E1;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.compliance-close-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #EF4444;
+  border-color: #EF4444;
+}
+
+.compliance-modal-body {
+  padding: 32px;
+}
+
+.compliance-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.comp-stat-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(197, 160, 82, 0.25);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #F1D48B;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: #CBD5E1;
+  line-height: 1.3;
+}
+
+.certificates-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.cert-item-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 22px;
+  transition: all 0.22s;
+}
+
+.cert-item-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(197, 160, 82, 0.4);
+  transform: translateY(-2px);
+}
+
+.cert-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.cert-badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34D399;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.cert-reg-code {
+  font-size: 0.78rem;
+  color: #F5D998;
+  font-weight: 700;
+}
+
+.cert-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0 0 10px;
+  line-height: 1.35;
+}
+
+.cert-issuer {
+  font-size: 0.82rem;
+  color: #94A3B8;
+  margin-bottom: 8px;
+}
+
+.cert-issuer strong {
+  color: #E2E8F0;
+  margin-left: 6px;
+}
+
+.cert-desc {
+  font-size: 0.85rem;
+  color: #CBD5E1;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Download PQ Dossier Box */
+.company-profile-download-box {
+  background: linear-gradient(135deg, rgba(197, 160, 82, 0.15) 0%, rgba(197, 160, 82, 0.05) 100%);
+  border: 1px solid #C5A052;
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.download-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  min-width: 280px;
+}
+
+.download-info h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #F1D48B;
+  margin: 0 0 4px;
+}
+
+.download-info p {
+  font-size: 0.85rem;
+  color: #CBD5E1;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.btn-download-pq {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #C5A052;
+  color: #06172D;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: all 0.22s;
+  white-space: nowrap;
+}
+
+.btn-download-pq:hover {
+  background: #E4C77E;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(197, 160, 82, 0.35);
+}
+
+@media (max-width: 768px) {
+  .compliance-modal-body {
+    padding: 20px 18px;
+  }
+  .compliance-stats-grid,
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+  .company-profile-download-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-download-pq {
+    justify-content: center;
+  }
+}
