@@ -42,7 +42,7 @@ export default function SplashLoader({ onComplete }) {
             >
               <img
                 src={logo}
-                alt="ORJWAN CONTRACTING"
+                alt="ORJWAN ZAKI BIN AHMED AL-RABH GENERAL CONTRACTING"
                 className="splash-logo"
               />
             </motion.div>
@@ -61,7 +61,11 @@ export default function SplashLoader({ onComplete }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <div className="splash-company-name">ORJWAN CONTRACTING</div>
+              <div className="splash-company-name">
+                ORJWAN ZAKI BIN AHMED AL-RABH
+                <br />
+                GENERAL CONTRACTING
+              </div>
               <div className="splash-cr">CR No. 2053123342 • Dammam, Saudi Arabia</div>
             </motion.div>
           </div>
