@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import logo from '../assets/logo.png';
 import './SplashLoader.css';
 
 export default function SplashLoader({ onComplete }) {
@@ -40,7 +41,7 @@ export default function SplashLoader({ onComplete }) {
               className="splash-logo-wrap"
             >
               <img
-                src="/logo.png"
+                src={logo}
                 alt="ORJWAN CONTRACTING"
                 className="splash-logo"
               />

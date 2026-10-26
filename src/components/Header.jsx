@@ -5,6 +5,7 @@ import {
   Send, Sparkles, HardHat, Wrench, Users, Building, 
   ShieldCheck, ArrowRight, ChevronRight
 } from 'lucide-react';
+import logo from '../assets/logo.png';
 import '../styles/Header.css';
 
 export default function Header({ lang, toggleLanguage, onOpenQuote }) {
@@ -103,7 +104,7 @@ export default function Header({ lang, toggleLanguage, onOpenQuote }) {
             <div className="logo-glow-wrapper">
               <div className="logo-light-boom"></div>
               <img 
-                src="/logo.png" 
+                src={logo}
                 alt="ORJWAN GENERAL CONTRACTING" 
                 className="site-main-logo" 
               />
@@ -262,7 +263,7 @@ export default function Header({ lang, toggleLanguage, onOpenQuote }) {
             <div className="drawer-brand">
               <div className="drawer-logo-glow">
                 <div className="drawer-logo-white-shade"></div>
-                <img src="/logo.png" alt="ORJWAN CONTRACTING" className="drawer-logo-img" />
+                <img src={logo} alt="ORJWAN CONTRACTING" className="drawer-logo-img" />
               </div>
               <div className="drawer-brand-text">
                 <span className="drawer-co-name">ORJUWAN ZAKI BIN AHMED AL REBH</span>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ShieldCheck, MapPin, Phone, Mail, Globe } from 'lucide-react';
+import logo from '../assets/logo.png';
 import '../styles/Footer.css';
 
 export default function Footer({ lang, toggleLanguage }) {
@@ -55,7 +56,7 @@ export default function Footer({ lang, toggleLanguage }) {
                 <div className="logo-glow-wrapper" style={{ display: 'inline-flex', padding: '6px 14px' }}>
                   <div className="logo-light-boom"></div>
                   <img 
-                    src="/logo.png" 
+                    src={logo}
                     alt="OZBA CONTRACTING / ORJWAN GENERAL CONTRACTING" 
                     className="site-main-logo"
                     style={{ height: 68, width: 'auto', objectFit: 'contain' }}
