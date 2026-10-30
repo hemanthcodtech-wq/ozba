@@ -31,7 +31,7 @@ export default function Footer({ lang, toggleLanguage }) {
               <div className="ref-strip-icon"><Phone size={22} /></div>
               <div>
                 <div className="ref-strip-label">Call Support</div>
-                <div className="ref-strip-val">0568565143</div>
+                <div className="ref-strip-val">0590767595</div>
               </div>
             </div>
 
@@ -39,7 +39,7 @@ export default function Footer({ lang, toggleLanguage }) {
               <div className="ref-strip-icon"><Mail size={22} /></div>
               <div>
                 <div className="ref-strip-label">Official Email</div>
-                <div className="ref-strip-val">info@orjwans.com</div>
+                <div className="ref-strip-val">info@orjuwanz.com</div>
               </div>
             </div>
           </div>
@@ -106,10 +106,15 @@ export default function Footer({ lang, toggleLanguage }) {
                 Dammam 32242–3513, Saudi Arabia
               </p>
               <div style={{ fontSize: '0.88rem', marginBottom: 8 }}>
-                <strong>Tel:</strong> <a href="tel:+966568565143" style={{ color: '#cbd5e1' }}>+966 56 856 5143</a>
+                <strong>Tel:</strong> <a href="tel:+966590767595" style={{ color: '#cbd5e1' }}>+966 59 076 7595</a>
               </div>
-              <div style={{ fontSize: '0.88rem', marginBottom: 18 }}>
-                <strong>Email:</strong> <a href="mailto:info@orjwans.com" style={{ color: '#cbd5e1' }}>info@orjwans.com</a>
+              <div style={{ fontSize: '0.88rem', marginBottom: 18, display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>
+                  <strong>Email:</strong> <a href="mailto:info@orjuwanz.com" style={{ color: '#cbd5e1' }}>info@orjuwanz.com</a>
+                </div>
+                <div>
+                  <strong style={{ opacity: 0.8 }}>Direct:</strong> <a href="mailto:thiru@orjuwanz.com" style={{ color: '#cbd5e1' }}>thiru@orjuwanz.com</a>
+                </div>
               </div>
               <div>
                 <button className="lang-switch" onClick={toggleLanguage}>

@@ -229,7 +229,7 @@ export default function Services({ lang, onOpenQuote }) {
     {
       qEn: 'How can we request a quotation?',
       qAr: 'كيف يمكننا طلب تسعيرة رسمية لمشروعنا؟',
-      aEn: 'You can contact our team by phone (+966 56 856 5143 / +966 56 711 9230) or submit the online quotation form. Pricing and availability will be confirmed promptly.',
+      aEn: 'You can contact our team by phone (+966 59 076 7595 / +966 56 711 9230) or submit the online quotation form. Pricing and availability will be confirmed promptly.',
       aAr: 'يمكنك التواصل معنا هاتفياً أو عبر واتساب أو تعبئة نموذج طلب التسعيرة الإلكتروني، وسنقوم بالرد بعرض رسمي مفصل.'
     },
     {
@@ -659,9 +659,9 @@ export default function Services({ lang, onOpenQuote }) {
                 <ArrowRight size={18} />
               </button>
 
-              <a href="tel:0568565143" className="btn-cta-call">
+              <a href="tel:0590767595" className="btn-cta-call">
                 <Phone size={18} />
-                <span>0568565143</span>
+                <span>0590767595</span>
               </a>
 
               <a 
@@ -705,7 +705,7 @@ export default function Services({ lang, onOpenQuote }) {
                 <Phone size={16} className="cta-info-icon" />
                 <div>
                   <div className="cta-info-lbl">Direct Phone</div>
-                  <div className="cta-info-val">0568565143 / +966 56 711 9230</div>
+                  <div className="cta-info-val">0590767595 / +966 56 711 9230</div>
                 </div>
               </div>
             </div>

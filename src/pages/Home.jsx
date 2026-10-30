@@ -90,9 +90,9 @@ export default function Home({ lang, onOpenQuote, showToast }) {
   });
 
   const handleCopyPhone = () => {
-    navigator.clipboard.writeText('+966568565143');
+    navigator.clipboard.writeText('+966590767595');
     setCopiedPhone(true);
-    showToast(lang === 'en' ? 'Phone number copied: +966 56 856 5143' : 'تم نسخ رقم الهاتف: 0568565143');
+    showToast(lang === 'en' ? 'Phone number copied: +966 59 076 7595' : 'تم نسخ رقم الهاتف: 0590767595');
     setTimeout(() => setCopiedPhone(false), 3000);
   };
 
@@ -140,10 +140,10 @@ export default function Home({ lang, onOpenQuote, showToast }) {
               alt={heroSlides[currentSlide].alt}
               className="hero-mobile-img" 
             />
-            <div className="hero-mobile-img-badge">
-              <span className="hero-mobile-badge-dot"></span>
-              <span>{lang === 'en' ? 'Active Projects • KSA' : 'مشاريع نشطة • المملكة'}</span>
-            </div>
+            {/* <div className="hero-mobile-img-badge"> */}
+              {/* <span className="hero-mobile-badge-dot"></span> */}
+              {/* <span>{lang === 'en' ? 'Active Projects • KSA' : 'مشاريع نشطة • المملكة'}</span> */}
+            {/* </div> */}
             <div className="hero-mobile-img-controls">
               <button onClick={prevSlide} aria-label="Previous Photo" className="hero-mob-ctrl-btn">
                 <ArrowLeft size={14} />
@@ -880,7 +880,7 @@ export default function Home({ lang, onOpenQuote, showToast }) {
               </button>
               <button className="copy-phone-btn" onClick={handleCopyPhone}>
                 {copiedPhone ? <Check size={18} color="#e5a93c" /> : <Copy size={18} />}
-                <span>+966 56 856 5143</span>
+                <span>+966 59 076 7595</span>
               </button>
             </div>
           </div>
@@ -926,7 +926,7 @@ export default function Home({ lang, onOpenQuote, showToast }) {
                   <div>
                     <div className="contact-label">{lang === 'en' ? 'Direct Phone / WhatsApp' : 'الهاتف المباشر / واتساب'}</div>
                     <div className="contact-val">
-                      <a href="tel:+966568565143" style={{ color: '#fff', textDecoration: 'none' }}>0568565143 / +966 56 856 5143</a>
+                      <a href="tel:+966590767595" style={{ color: '#fff', textDecoration: 'none' }}>0590767595 / +966 59 076 7595</a>
                     </div>
                   </div>
                 </div>
@@ -936,7 +936,7 @@ export default function Home({ lang, onOpenQuote, showToast }) {
                   <div>
                     <div className="contact-label">{lang === 'en' ? 'Email Address' : 'البريد الإلكتروني'}</div>
                     <div className="contact-val">
-                      <a href="mailto:info@orjwans.com" style={{ color: '#fff', textDecoration: 'none' }}>info@orjwans.com</a>
+                      <a href="mailto:info@orjuwanz.com" style={{ color: '#fff', textDecoration: 'none' }}>info@orjuwanz.com</a>
                     </div>
                   </div>
                 </div>

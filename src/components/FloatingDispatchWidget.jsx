@@ -58,9 +58,9 @@ export default function FloatingDispatchWidget({ lang }) {
             </div>
 
             <div className="dispatch-direct-call">
-              <a href="tel:0568565143" className="direct-call-link">
+              <a href="tel:0590767595" className="direct-call-link">
                 <Phone size={15} />
-                <span>{lang === 'en' ? 'Call Operations: 0568565143' : 'اتصال مباشر: ٠٥٦٨٥٦٥١٤٣'}</span>
+                <span>{lang === 'en' ? 'Call Operations: 0590767595' : 'اتصال مباشر: ٠٥٩٠٧٦٧٥٩٥'}</span>
               </a>
             </div>
 

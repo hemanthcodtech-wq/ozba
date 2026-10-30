@@ -70,9 +70,9 @@ Project Details: ${formData.details || '(Not provided)'}
   const handleCopyCompanyDetails = () => {
     const companyDetails = `ORJWAN ZAKI BIN AHMED AL-RABH GENERAL CONTRACTING EST.
 Commercial Registration (CR): 2053123342
-Phone: 0568565143 / +966568565143
+Phone: 0590767595 / +966590767595
 WhatsApp: +966567119230
-Email: info@orjwans.com
+Email: info@orjuwanz.com
 Office Address: EDJC8593, 1st Floor, 8593 Al Khazzan St, Dammam 32242–3513, Kingdom of Saudi Arabia.`;
 
     navigator.clipboard.writeText(companyDetails);
@@ -120,8 +120,8 @@ Office Address: EDJC8593, 1st Floor, 8593 Al Khazzan St, Dammam 32242–3513, Ki
     {
       qEn: 'How can I request a quotation?',
       qAr: 'كيف يمكنني طلب عرض أسعار؟',
-      aEn: 'Complete the enquiry form with your contact details, service requirements, project location, and scope of work. You can also call us directly at 0568565143 or email your BOQ/RFP to info@orjwans.com for a formal quotation within 24 hours.',
-      aAr: 'أكمل نموذج الاستفسار مع بيانات الاتصال، نوع الخدمة المطلوبة، موقع المشروع ونطاق العمل. يمكنك أيضاً الاتصال بنا مباشرة على 0568565143 أو إرسال جدول الكميات إلى info@orjwans.com لاستلام عرض رسمي خلال 24 ساعة.'
+      aEn: 'Complete the enquiry form with your contact details, service requirements, project location, and scope of work. You can also call us directly at 0590767595 or email your BOQ/RFP to info@orjuwanz.com for a formal quotation within 24 hours.',
+      aAr: 'أكمل نموذج الاستفسار مع بيانات الاتصال، نوع الخدمة المطلوبة، موقع المشروع ونطاق العمل. يمكنك أيضاً الاتصال بنا مباشرة على 0590767595 أو إرسال جدول الكميات إلى info@orjuwanz.com لاستلام عرض رسمي خلال 24 ساعة.'
     },
     {
       qEn: 'Can I enquire about manpower and equipment together?',
@@ -179,7 +179,7 @@ Office Address: EDJC8593, 1st Floor, 8593 Al Khazzan St, Dammam 32242–3513, Ki
               <Send size={18} />
               <span>{lang === 'en' ? 'Send an Enquiry' : 'أرسل استفسارك الآن'}</span>
             </a>
-            <a href="tel:0568565143" className="btn-glass-call">
+            <a href="tel:0590767595" className="btn-glass-call">
               <Phone size={18} />
               <span>{lang === 'en' ? 'Call Our Team' : 'اتصل بفريقنا مباشرة'}</span>
             </a>
@@ -242,7 +242,7 @@ Office Address: EDJC8593, 1st Floor, 8593 Al Khazzan St, Dammam 32242–3513, Ki
                       <div className="info-content-text">
                         <h3 className="info-item-title">{lang === 'en' ? 'Call Us' : 'اتصل بنا'}</h3>
                         <div className="phone-big-call">
-                          <a href="tel:0568565143">0568565143</a>
+                          <a href="tel:0590767595">0590767595</a>
                         </div>
                         <p className="info-item-note">
                           {lang === 'en' 
@@ -250,7 +250,7 @@ Office Address: EDJC8593, 1st Floor, 8593 Al Khazzan St, Dammam 32242–3513, Ki
                             : 'اتصل بنا لمناقشة متطلبات مشروعك وتوريد الكوادر والمعدات فوراً.'}
                         </p>
                         <div className="phone-sub-line">
-                          <strong>{lang === 'en' ? 'Phone:' : 'الهاتف:'}</strong> 0568565143
+                          <strong>{lang === 'en' ? 'Phone:' : 'الهاتف:'}</strong> 0590767595
                         </div>
                         <div className="direct-chat-row">
                           <a 
@@ -297,8 +297,9 @@ Office Address: EDJC8593, 1st Floor, 8593 Al Khazzan St, Dammam 32242–3513, Ki
                     </div>
                     <div className="info-content-text">
                       <h3 className="info-item-title">{lang === 'en' ? 'Email Inquiries' : 'البريد الإلكتروني الرسمي'}</h3>
-                      <p className="info-item-value">
-                        <a href="mailto:info@orjwans.com" className="email-link">info@orjwans.com</a>
+                      <p className="info-item-value" style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                        <a href="mailto:info@orjuwanz.com" className="email-link">info@orjuwanz.com</a>
+                        <a href="mailto:thiru@orjuwanz.com" className="email-link" style={{ fontSize: '0.95em' }}>thiru@orjuwanz.com</a>
                       </p>
                       <p className="info-item-note">
                         {lang === 'en' 
@@ -371,7 +372,7 @@ Office Address: EDJC8593, 1st Floor, 8593 Al Khazzan St, Dammam 32242–3513, Ki
                         type="tel" 
                         required 
                         className="field-input" 
-                        placeholder={lang === 'en' ? '+966 5X XXX XXXX / 0568565143' : '05XXXXXXXX / +966 5X XXX XXXX'}
+                        placeholder={lang === 'en' ? '+966 5X XXX XXXX / 0590767595' : '05XXXXXXXX / +966 5X XXX XXXX'}
                         value={formData.phone}
                         onChange={(e) => handleInputChange('phone', e.target.value)}
                       />
@@ -667,9 +668,9 @@ Office Address: EDJC8593, 1st Floor, 8593 Al Khazzan St, Dammam 32242–3513, Ki
             </p>
 
             <div className="cta-dual-buttons">
-              <a href="tel:0568565143" className="btn-cta-primary">
+              <a href="tel:0590767595" className="btn-cta-primary">
                 <Phone size={18} />
-                <span>{lang === 'en' ? 'Call 0568565143' : 'اتصل الآن 0568565143'}</span>
+                <span>{lang === 'en' ? 'Call 0590767595' : 'اتصل الآن 0590767595'}</span>
               </a>
 
               <button 

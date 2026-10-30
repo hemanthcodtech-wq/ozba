@@ -261,9 +261,9 @@ export default function Equipment({ lang, onOpenQuote }) {
                   {lang === 'en' ? 'Request Equipment RFP' : 'طلب تسعيرة أسطول'}
                   <ArrowRight size={18} />
                 </Link>
-                <a href="tel:0568565143" className="btn-call-outline">
+                <a href="tel:0590767595" className="btn-call-outline">
                   <Phone size={16} />
-                  <span>0568565143</span>
+                  <span>0590767595</span>
                 </a>
               </div>
             </div>
@@ -323,9 +323,9 @@ export default function Equipment({ lang, onOpenQuote }) {
                     {lang === 'en' ? 'Proceed to Rental RFP' : 'المتابعة لطلب التسعيرة'}
                     <ArrowRight size={16} />
                   </Link>
-                  <a href="tel:0568565143" className="btn-navy" style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                  <a href="tel:0590767595" className="btn-navy" style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
                     <Phone size={16} />
-                    <span>0568565143</span>
+                    <span>0590767595</span>
                   </a>
                 </div>
               </div>

@@ -201,7 +201,7 @@ export default function Legal({ lang, type = 'privacy' }) {
                   </div>
                   <div className="legal-doc-details-row">
                     <span>{lang === 'en' ? 'Direct Contact:' : 'الهاتف المباشر:'}</span>
-                    <span>0568565143</span>
+                    <span>0590767595</span>
                   </div>
                 </div>
               </div>
@@ -456,7 +456,7 @@ export default function Legal({ lang, type = 'privacy' }) {
                           <p><strong>Company:</strong> ORJWAN ZAKI BIN AHMED AL-RABH GENERAL CONTRACTING EST.</p>
                           <p><strong>Commercial Registration (CR) No.:</strong> 2053123342</p>
                           <p><strong>Address:</strong> EDJC8593, 1st Floor, 8593 Al Khazzan St, Dammam 32242–3513, Saudi Arabia</p>
-                          <p><strong>Phone:</strong> 0568565143</p>
+                          <p><strong>Phone:</strong> 0590767595</p>
                           <p style={{ marginTop: 8, fontSize: '0.9rem', color: '#1E3A8A' }}>
                             <em>* Please include “Privacy Policy Request” in the subject of your communication where applicable.</em>
                           </p>
@@ -504,7 +504,7 @@ export default function Legal({ lang, type = 'privacy' }) {
                         <li><strong>Business Name:</strong> ORJWAN ZAKI BIN AHMED AL-RABH GENERAL CONTRACTING EST.</li>
                         <li><strong>Commercial Registration (CR) No.:</strong> 2053123342</li>
                         <li><strong>Address:</strong> EDJC8593, 1st Floor, 8593 Al Khazzan St, Dammam 32242–3513, Saudi Arabia</li>
-                        <li><strong>Phone:</strong> 0568565143</li>
+                        <li><strong>Phone:</strong> 0590767595</li>
                       </ul>
                     </div>
                   </div>
@@ -772,7 +772,7 @@ export default function Legal({ lang, type = 'privacy' }) {
                           <p><strong>ORJWAN ZAKI BIN AHMED AL-RABH GENERAL CONTRACTING EST.</strong></p>
                           <p><strong>CR No.:</strong> 2053123342</p>
                           <p><strong>Address:</strong> EDJC8593, 1st Floor, 8593 Al Khazzan St, Dammam 32242–3513, Saudi Arabia</p>
-                          <p><strong>Phone:</strong> 0568565143</p>
+                          <p><strong>Phone:</strong> 0590767595</p>
                         </div>
                       </div>
                     </div>
@@ -1171,7 +1171,7 @@ export default function Legal({ lang, type = 'privacy' }) {
                           <p><strong>ORJWAN ZAKI BIN AHMED AL-RABH GENERAL CONTRACTING EST.</strong></p>
                           <p><strong>Commercial Registration (CR) No.:</strong> 2053123342</p>
                           <p><strong>Address:</strong> EDJC8593, 1st Floor, 8593 Al Khazzan St, Dammam 32242–3513, Saudi Arabia</p>
-                          <p><strong>Phone:</strong> 0568565143</p>
+                          <p><strong>Phone:</strong> 0590767595</p>
                           <p style={{ marginTop: 8, fontSize: '0.9rem', color: '#1E3A8A' }}>
                             <em>* Please include the equipment type, project location, required dates, and rental duration in your enquiry.</em>
                           </p>

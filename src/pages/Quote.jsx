@@ -183,7 +183,7 @@ export default function Quote({ lang, showToast }) {
                   <div className="summary-submitted-box">
                     <div><strong>CR Number:</strong> 2053123342</div>
                     <div><strong>Company:</strong> ORJWAN ZAKI BIN AHMED AL-RABH GENERAL CONTRACTING EST.</div>
-                    <div><strong>Direct Phone:</strong> <a href="tel:0568565143">0568565143</a></div>
+                    <div><strong>Direct Phone:</strong> <a href="tel:0590767595">0590767595</a></div>
                   </div>
 
                   <button 

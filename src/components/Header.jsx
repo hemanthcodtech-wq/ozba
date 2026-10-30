@@ -73,14 +73,14 @@ export default function Header({ lang, toggleLanguage, onOpenQuote }) {
             </li>
             <li className="top-info-item">
               <Phone size={13} />
-              <a href="tel:0568565143" style={{ color: 'inherit', textDecoration: 'none' }}>
-                0568565143
+              <a href="tel:0590767595" style={{ color: 'inherit', textDecoration: 'none' }}>
+                0590767595
               </a>
             </li>
             <li className="top-info-item">
               <Mail size={13} />
-              <a href="mailto:info@orjwans.com" style={{ color: 'inherit', textDecoration: 'none' }}>
-                info@orjwans.com
+              <a href="mailto:info@orjuwanz.com" style={{ color: 'inherit', textDecoration: 'none' }}>
+                info@orjuwanz.com
               </a>
             </li>
           </ul>
@@ -283,9 +283,9 @@ export default function Header({ lang, toggleLanguage, onOpenQuote }) {
 
           {/* Quick Call & WhatsApp Action Banner */}
           <div className="drawer-quick-cta-bar">
-            <a href="tel:0568565143" className="drawer-call-btn">
+            <a href="tel:0590767595" className="drawer-call-btn">
               <Phone size={15} />
-              <span>0568565143</span>
+              <span>0590767595</span>
             </a>
             <Link to="/quote" className="drawer-quote-pill" onClick={closeAllMenus}>
               <Send size={14} />
@@ -456,7 +456,7 @@ export default function Header({ lang, toggleLanguage, onOpenQuote }) {
             </div>
             <div className="drawer-contact-line">
               <Mail size={15} color="#C5A052" />
-              <a href="mailto:info@orjwans.com">info@orjwans.com</a>
+              <a href="mailto:info@orjuwanz.com">info@orjuwanz.com</a>
             </div>
 
             <div className="drawer-legal-row">
