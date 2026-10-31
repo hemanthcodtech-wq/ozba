@@ -7,14 +7,16 @@ export default function FloatingDispatchWidget({ lang }) {
   const [selectedService, setSelectedService] = useState('Heavy Equipment Rental');
 
   const preFilledMessages = [
-    { id: 'equip', labelEn: 'Heavy Equipment Rental', labelAr: 'تأجير معدات وآليات ثقيلة', text: 'Hello ORJWAN team, I need equipment availability and rates for an upcoming project.' },
+    
     { id: 'manpower', labelEn: 'Technical Manpower Supply', labelAr: 'توريد كوادر فنية معتمدة', text: 'Hello ORJWAN team, I need a quotation for skilled manpower (WPR / Riggers / Supervisors).' },
-    { id: 'urgent', labelEn: 'Urgent Site Mobilization', labelAr: 'توريد فوري لموقع العمل', text: 'Hello ORJWAN team, I require immediate dispatch of machinery / personnel to our worksite.' }
+
+    { id: 'urgent', labelEn: 'Urgent Site Mobilization', labelAr: 'توريد فوري لموقع العمل', text: 'Hello ORJWAN team, I require immediate dispatch of machinery / personnel to our worksite.' },
+    { id: 'equip', labelEn: 'Heavy Equipment Rental', labelAr: 'تأجير معدات وآليات ثقيلة', text: 'Hello ORJWAN team, I need equipment availability and rates for an upcoming project.' }
   ];
 
   const handleOpenWhatsApp = (text) => {
     const encoded = encodeURIComponent(text);
-    window.open(`https://wa.me/966568565143?text=${encoded}`, '_blank');
+    window.open(`https://wa.me/966590767595?text=${encoded}`, '_blank');
   };
 
   return (

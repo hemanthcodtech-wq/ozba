@@ -70,7 +70,7 @@ export default function FleetEstimator({ lang, onOpenQuote, showToast }) {
     const text = encodeURIComponent(
       `Hello ORJWAN Contracting,\nI used your online RFQ Estimator:\n- Service: ${serviceType.toUpperCase()}\n- Requirement: ${activeItemObj.nameEn}\n- Quantity: ${quantity}\n- Duration: ${activeDurationObj.nameEn}\n- Location: ${activeRegionObj.nameEn}\n- Operator: ${withOperator ? 'Yes, Certified Operator' : 'Bare Lease'}\n\nPlease share your formal stamped quotation and availability.`
     );
-    window.open(`https://wa.me/966568565143?text=${text}`, '_blank');
+    window.open(`https://wa.me/966590767595?text=${text}`, '_blank');
   };
 
   return (

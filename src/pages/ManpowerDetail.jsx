@@ -30,8 +30,8 @@ export default function ManpowerDetail({ lang, onOpenQuote }) {
 
   const activeRole = selectedRole || category.roles[0];
 
-  const phoneNumber = '+966567119230';
-  const whatsappNumber = '966567119230';
+  const phoneNumber = '+966590767595';
+  const whatsappNumber = '966590767595';
   const whatsappMessage = encodeURIComponent(
     `Hello ORJWAN Contracting, I would like to inquire about manpower supply for Category ${category.code}: ${category.title} (${activeRole.name}). Please send rates and available CVs.`
   );
@@ -100,7 +100,7 @@ export default function ManpowerDetail({ lang, onOpenQuote }) {
                   title={lang === 'en' ? 'Call Directly' : 'اتصل الآن'}
                 >
                   <Phone size={18} />
-                  <span>+966 56 711 9230</span>
+                  <span>+966 59 076 7595</span>
                 </a>
 
                 <a 

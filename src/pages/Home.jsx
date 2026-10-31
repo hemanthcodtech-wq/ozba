@@ -654,7 +654,7 @@ export default function Home({ lang, onOpenQuote, showToast }) {
                   {/* Direct Contact Buttons: Call & WhatsApp */}
                   <div className="pdf-card-contact-row">
                     <a 
-                      href="tel:+966567119230" 
+                      href="tel:+966590767595" 
                       className="btn-card-call"
                       title={lang === 'en' ? 'Call Directly' : 'اتصال مباشر'}
                     >
@@ -663,7 +663,7 @@ export default function Home({ lang, onOpenQuote, showToast }) {
                     </a>
 
                     <a 
-                      href={`https://wa.me/966567119230?text=${encodeURIComponent(`Hello ORJWAN Contracting, I want to inquire about Manpower Category ${sec.code}: ${sec.title}. Please share rates and available CVs.`)}`}
+                      href={`https://wa.me/966590767595?text=${encodeURIComponent(`Hello ORJWAN Contracting, I want to inquire about Manpower Category ${sec.code}: ${sec.title}. Please share rates and available CVs.`)}`}
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="btn-card-whatsapp"

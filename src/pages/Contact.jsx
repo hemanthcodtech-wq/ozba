@@ -71,7 +71,7 @@ Project Details: ${formData.details || '(Not provided)'}
     const companyDetails = `ORJWAN ZAKI BIN AHMED AL-RABH GENERAL CONTRACTING EST.
 Commercial Registration (CR): 2053123342
 Phone: 0590767595 / +966590767595
-WhatsApp: +966567119230
+WhatsApp: +966590767595
 Email: info@orjuwanz.com
 Office Address: EDJC8593, 1st Floor, 8593 Al Khazzan St, Dammam 32242–3513, Kingdom of Saudi Arabia.`;
 
@@ -254,7 +254,7 @@ Office Address: EDJC8593, 1st Floor, 8593 Al Khazzan St, Dammam 32242–3513, Ki
                         </div>
                         <div className="direct-chat-row">
                           <a 
-                            href="https://wa.me/966567119230?text=Hello%20ORJWAN%20Contracting%2C%20I%20would%20like%20to%20enquire%20about%20your%20services."
+                            href="https://wa.me/966590767595?text=Hello%20ORJWAN%20Contracting%2C%20I%20would%20like%20to%20enquire%20about%20your%20services."
                             target="_blank" 
                             rel="noreferrer"
                             className="whatsapp-quick-btn"

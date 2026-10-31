@@ -229,7 +229,7 @@ export default function Services({ lang, onOpenQuote }) {
     {
       qEn: 'How can we request a quotation?',
       qAr: 'كيف يمكننا طلب تسعيرة رسمية لمشروعنا؟',
-      aEn: 'You can contact our team by phone (+966 59 076 7595 / +966 56 711 9230) or submit the online quotation form. Pricing and availability will be confirmed promptly.',
+      aEn: 'You can contact our team by phone (+966 59 076 7595) or submit the online quotation form. Pricing and availability will be confirmed promptly.',
       aAr: 'يمكنك التواصل معنا هاتفياً أو عبر واتساب أو تعبئة نموذج طلب التسعيرة الإلكتروني، وسنقوم بالرد بعرض رسمي مفصل.'
     },
     {
@@ -665,7 +665,7 @@ export default function Services({ lang, onOpenQuote }) {
               </a>
 
               <a 
-                href={`https://wa.me/966567119230?text=${encodeURIComponent('Hello ORJWAN Contracting, I would like to inquire about your services.')}`}
+                href={`https://wa.me/966590767595?text=${encodeURIComponent('Hello ORJWAN Contracting, I would like to inquire about your services.')}`}
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn-cta-whatsapp"
@@ -705,7 +705,7 @@ export default function Services({ lang, onOpenQuote }) {
                 <Phone size={16} className="cta-info-icon" />
                 <div>
                   <div className="cta-info-lbl">Direct Phone</div>
-                  <div className="cta-info-val">0590767595 / +966 56 711 9230</div>
+                  <div className="cta-info-val">0590767595 / +966 59 076 7595</div>
                 </div>
               </div>
             </div>

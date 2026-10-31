@@ -148,7 +148,7 @@ export default function ComplianceCertDrawer({ lang, isOpen, onClose }) {
               </div>
             </div>
             <a 
-              href="https://wa.me/966568565143?text=Hello%20ORJWAN%2C%20please%20send%20your%20Official%20Corporate%20PQ%20Dossier%20and%20Fleet%20Spec%20Sheet." 
+              href="https://wa.me/966590767595?text=Hello%20ORJWAN%2C%20please%20send%20your%20Official%20Corporate%20PQ%20Dossier%20and%20Fleet%20Spec%20Sheet." 
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn-download-pq"

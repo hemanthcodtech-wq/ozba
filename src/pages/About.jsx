@@ -635,7 +635,7 @@ export default function About({ lang, onOpenQuote }) {
               <div className="corp-detail-cell">
                 <div className="corp-cell-lbl">{lang === 'en' ? 'Contact Number' : 'رقم الاتصال المباشر'}</div>
                 <div className="corp-cell-val">
-                  <a href="tel:0590767595" className="corp-phone-link">0590767595</a> / <a href="tel:+966567119230" className="corp-phone-link">+966 56 711 9230</a>
+                  <a href="tel:0590767595" className="corp-phone-link">0590767595</a> / <a href="tel:+966590767595" className="corp-phone-link">+966 59 076 7595</a>
                 </div>
                 <div className="corp-cell-sub">خدمة العملاء والدعم الفني على مدار الساعة</div>
               </div>
